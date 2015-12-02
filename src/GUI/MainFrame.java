@@ -53,162 +53,162 @@ public class MainFrame extends JFrame {
 	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 		JSwingComponentFactory temp = new JLabelFactory();
-		jTabbedPane1 = new JTabbedPane();
-		jPanel4 = new JPanel();
-		jPanel7 = new JPanel();
-		// jLabel3 = new JLabel();
-		jLabel3 = (JLabelComponent) temp.create("Kind of Gas");
-		jLabel4 = new JLabel();
-		jLabel5 = new JLabel();
-		jLabel6 = new JLabel();
-		jLabel7 = new JLabel();
-		jLabel8 = new JLabel();
-		jLabel10 = new JLabel();
-		jLabel11 = new JLabel();
-		jLabel12 = new JLabel();
-		jLabel13 = new JLabel();
-		jLabel14 = new JLabel();
-		jLabel15 = new JLabel();
-		jLabel16 = new JLabel();
-		jLabel17 = new JLabel();
-		jLabel18 = new JLabel();
-		jLabel19 = new JLabel();
-		jLabel20 = new JLabel();
-		jLabel21 = new JLabel();
-		jLabel22 = new JLabel();
-		jLabel23 = new JLabel();
-		jLabel24 = new JLabel();
+		tabbedPane = new JTabbedPane();
+		tab_sl = new JPanel();
+		pnl_gInfo = new JPanel();
+		// lbl_type_gInfo = new JLabel();
+		lbl_type_gInfo = (JLabelComponent) temp.create("Kind of Gas");
+		lbl_vol_gInfo = new JLabel();
+		lbl_prc_gInfo = new JLabel();
+		lbl_gsln_gInfo = new JLabel();
+		lbl_lpg_gInfo = new JLabel();
+		lbl_dsl_gInfo = new JLabel();
+		lbl_gslnL_gInfo = new JLabel();
+		brdr_lpgVol_gInfo = new JLabel();
+		lbl_lpgL_gInfo = new JLabel();
+		brdr_dslVol_gInfo = new JLabel();
+		lbl_dslL_gInfo = new JLabel();
+		brdr_gslnVol_gInfo = new JLabel();
+		lbl_gslnD_gInfo = new JLabel();
+		lbl_lpgD_gInfo = new JLabel();
+		lbl_dslD_gInfo = new JLabel();
+		brdr_gslnPrc_gInfo = new JLabel();
+		brdr_lpgPrc_gInfo = new JLabel();
+		brdr_dslPrc_gInfo = new JLabel();
+		lbl_gslnPL_gInfo = new JLabel();
+		lbl_lpgPL_gInfo = new JLabel();
+		lbl_dslPL_gInfo = new JLabel();
 		jTextField1 = new JTextField();
-		jPanel8 = new JPanel();
-		jLabel9 = new JLabel();
-		jComboBox1 = new JComboBox<>();
-		jRadioButton1 = new JRadioButton();
-		jRadioButton2 = new JRadioButton();
-		jLabel25 = new JLabel();
-		jLabel26 = new JLabel();
-		jLabel27 = new JLabel();
-		jLabel28 = new JLabel();
-		jCheckBox1 = new JCheckBox();
-		jTextField6 = new JTextField();
-		jButton4 = new JButton();
-		jButton5 = new JButton();
-		jPanel9 = new JPanel();
-		jLabel29 = new JLabel();
-		jLabel30 = new JLabel();
-		jTextField2 = new JTextField();
-		jTextField3 = new JTextField();
-		jLabel31 = new JLabel();
-		jTextField4 = new JTextField();
-		jButton2 = new JButton();
-		jButton3 = new JButton();
-		jPanel5 = new JPanel();
-		jPanel2 = new JPanel();
-		jRadioButton8 = new JRadioButton();
-		jRadioButton9 = new JRadioButton();
-		jRadioButton10 = new JRadioButton();
-		jRadioButton11 = new JRadioButton();
-		jRadioButton12 = new JRadioButton();
-		jComboBox7 = new JComboBox<>();
-		jComboBox8 = new JComboBox<>();
-		jComboBox9 = new JComboBox<>();
-		jComboBox10 = new JComboBox<>();
-		jComboBox11 = new JComboBox<>();
-		jTextField7 = new JTextField();
-		jLabel32 = new JLabel();
-		jTextField5 = new JTextField();
-		jButton1 = new JButton();
-		jPanel1 = new JPanel();
-		jLabel33 = new JLabel();
-		jLabel34 = new JLabel();
-		jLabel35 = new JLabel();
-		jComboBox2 = new JComboBox<>();
-		jTextField8 = new JTextField();
-		jTextField9 = new JTextField();
-		jLabel36 = new JLabel();
-		jLabel37 = new JLabel();
-		jPanel6 = new JPanel();
-		jPanel3 = new JPanel();
-		jLabel38 = new JLabel();
-		jComboBox3 = new JComboBox<>();
-		jLabel39 = new JLabel();
-		jLabel40 = new JLabel();
-		jLabel41 = new JLabel();
-		jTextField10 = new JTextField();
-		jTextField11 = new JTextField();
-		jCheckBox2 = new JCheckBox();
-		jButton6 = new JButton();
-		jButton7 = new JButton();
-		jPanel11 = new JPanel();
-		jLabel42 = new JLabel();
-		jComboBox4 = new JComboBox<>();
-		jTextField12 = new JTextField();
-		jLabel43 = new JLabel();
-		jLabel44 = new JLabel();
-		jTextField13 = new JTextField();
-		jLabel45 = new JLabel();
-		jCheckBox3 = new JCheckBox();
-		jButton8 = new JButton();
-		jButton9 = new JButton();
-		jLabel1 = new JLabel();
-		jLabel2 = new JLabel();
+		pnl_sl = new JPanel();
+		lbl_type_sl = new JLabel();
+		cmb_type_sl = new JComboBox<>();
+		rd_mn_sl = new JRadioButton();
+		rd_vol_sl = new JRadioButton();
+		lbl_mnD_sl = new JLabel();
+		brdr_vol_sl = new JLabel();
+		brdr_mn_sl = new JLabel();
+		lbl_volL_sl = new JLabel();
+		chk_mlg_sl = new JCheckBox();
+		txt_mlg_sl = new JTextField();
+		btn_ok_sl = new JButton();
+		btn_cncl_sl = new JButton();
+		pnl_cInfo = new JPanel();
+		lbl_nm_cInfo = new JLabel();
+		lbl_nmbr_cInfo = new JLabel();
+		txt_nm_cInfo = new JTextField();
+		txt_nmbr_cInfo = new JTextField();
+		lbl_mlg_cInfo = new JLabel();
+		txt_mlg_cInfo = new JTextField();
+		btn_chk_cInfo = new JButton();
+		btn_enrl_cInfo = new JButton();
+		tab_chk = new JPanel();
+		pnl_chk = new JPanel();
+		rd_tdy_chk = new JRadioButton();
+		rd_date_chk = new JRadioButton();
+		rd_mnth_chk = new JRadioButton();
+		rd_prd_chk = new JRadioButton();
+		rd_frmTo_chk = new JRadioButton();
+		cmb_yy_chk = new JComboBox<>();
+		cmb_mm_chk = new JComboBox<>();
+		cmb_dd_chk = new JComboBox<>();
+		cmb_frm_chk = new JComboBox<>();
+		cmb_to_chk = new JComboBox<>();
+		txt_frm_chk = new JTextField();
+		lbl_to_chk = new JLabel();
+		txt_to_chk = new JTextField();
+		btn_chk_chk = new JButton();
+		pnl_res = new JPanel();
+		lbl_type_res = new JLabel();
+		lbl_vol_res = new JLabel();
+		lbl_sum_res = new JLabel();
+		cmb_type_res = new JComboBox<>();
+		txt_vol_res = new JTextField();
+		txt_sum_res = new JTextField();
+		lbl_sumD_res = new JLabel();
+		lbl_volL_res = new JLabel();
+		tab_prc = new JPanel();
+		pnl_prc = new JPanel();
+		lbl_type_prc = new JLabel();
+		cmb_type_prc = new JComboBox<>();
+		lbl_crnt_prc = new JLabel();
+		lbl_nw_prc = new JLabel();
+		lbl_chg_prc = new JLabel();
+		txt_crnt_prc = new JTextField();
+		txt_nw_prc = new JTextField();
+		chk_y_prc = new JCheckBox();
+		btn_chg_prc = new JButton();
+		btn_cncl_prc = new JButton();
+		pnl_odr = new JPanel();
+		lbl_type_odr = new JLabel();
+		cmb_type_odr = new JComboBox<>();
+		txt_crnt_odr = new JTextField();
+		lbl_crnt_odr = new JLabel();
+		lbl_add_odr = new JLabel();
+		txt_add_odr = new JTextField();
+		lbl_chk_odr = new JLabel();
+		chk_y_odr = new JCheckBox();
+		btn_odr_odr = new JButton();
+		btn_cncl_odr = new JButton();
+		lbl_wlcm = new JLabel();
+		lbl_date = new JLabel();
 
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-		jPanel7.setBorder(BorderFactory.createTitledBorder("Gas Information"));
+		pnl_gInfo.setBorder(BorderFactory.createTitledBorder("Gas Information"));
 
-		// jLabel3.setText("Kind of Gas");
-		System.out.println(jLabel3.getHorizontalAlignment());
+		// lbl_type_gInfo.setText("Kind of Gas");
+		System.out.println(lbl_type_gInfo.getHorizontalAlignment());
 
-		jLabel4.setText("Remain Volume");
+		lbl_vol_gInfo.setText("Remain Volume");
 
-		jLabel5.setText("Price");
+		lbl_prc_gInfo.setText("Price");
 
-		jLabel6.setText("  Regular :");
+		lbl_gsln_gInfo.setText("  Regular :");
 
-		jLabel7.setText("Premium :");
+		lbl_lpg_gInfo.setText("Premium :");
 
-		jLabel8.setText("    Diesel :");
+		lbl_dsl_gInfo.setText("    Diesel :");
 
-		jLabel10.setText("L");
+		lbl_gslnL_gInfo.setText("L");
 
-		jLabel11.setHorizontalAlignment(SwingConstants.RIGHT);
-		jLabel11.setText("10000");
-		jLabel11.setBorder(BorderFactory.createEtchedBorder());
+		brdr_lpgVol_gInfo.setHorizontalAlignment(SwingConstants.RIGHT);
+		brdr_lpgVol_gInfo.setText("10000");
+		brdr_lpgVol_gInfo.setBorder(BorderFactory.createEtchedBorder());
 
-		jLabel12.setText("L");
+		lbl_lpgL_gInfo.setText("L");
 
-		jLabel13.setHorizontalAlignment(SwingConstants.RIGHT);
-		jLabel13.setText("10000");
-		jLabel13.setBorder(BorderFactory.createEtchedBorder());
+		brdr_dslVol_gInfo.setHorizontalAlignment(SwingConstants.RIGHT);
+		brdr_dslVol_gInfo.setText("10000");
+		brdr_dslVol_gInfo.setBorder(BorderFactory.createEtchedBorder());
 
-		jLabel14.setText("L");
+		lbl_dslL_gInfo.setText("L");
 
-		jLabel15.setHorizontalAlignment(SwingConstants.RIGHT);
-		jLabel15.setText("00");
-		jLabel15.setBorder(BorderFactory.createEtchedBorder());
-		jLabel16.setText("$");
+		brdr_gslnVol_gInfo.setHorizontalAlignment(SwingConstants.RIGHT);
+		brdr_gslnVol_gInfo.setText("00");
+		brdr_gslnVol_gInfo.setBorder(BorderFactory.createEtchedBorder());
+		lbl_gslnD_gInfo.setText("$");
 
-		jLabel17.setText("$");
+		lbl_lpgD_gInfo.setText("$");
 
-		jLabel18.setText("$");
-		jLabel19.setHorizontalAlignment(SwingConstants.RIGHT);
-		jLabel19.setText("00");
-		jLabel19.setBorder(BorderFactory.createEtchedBorder());
+		lbl_dslD_gInfo.setText("$");
+		brdr_gslnPrc_gInfo.setHorizontalAlignment(SwingConstants.RIGHT);
+		brdr_gslnPrc_gInfo.setText("00");
+		brdr_gslnPrc_gInfo.setBorder(BorderFactory.createEtchedBorder());
 
-		jLabel20.setHorizontalAlignment(SwingConstants.RIGHT);
-		jLabel20.setText("00");
-		jLabel20.setBorder(BorderFactory.createEtchedBorder());
+		brdr_lpgPrc_gInfo.setHorizontalAlignment(SwingConstants.RIGHT);
+		brdr_lpgPrc_gInfo.setText("00");
+		brdr_lpgPrc_gInfo.setBorder(BorderFactory.createEtchedBorder());
 
-		jLabel21.setHorizontalAlignment(SwingConstants.RIGHT);
-		jLabel21.setText("00");
-		jLabel21.setBorder(BorderFactory.createEtchedBorder());
+		brdr_dslPrc_gInfo.setHorizontalAlignment(SwingConstants.RIGHT);
+		brdr_dslPrc_gInfo.setText("00");
+		brdr_dslPrc_gInfo.setBorder(BorderFactory.createEtchedBorder());
 
-		jLabel22.setText("/ L");
+		lbl_gslnPL_gInfo.setText("/ L");
 
-		jLabel23.setText("/ L");
+		lbl_lpgPL_gInfo.setText("/ L");
 
-		jLabel24.setText("/ L");
+		lbl_dslPL_gInfo.setText("/ L");
 
 		jTextField1.setEditable(false);
 		jTextField1.setHorizontalAlignment(JTextField.CENTER);
@@ -220,79 +220,73 @@ public class MainFrame extends JFrame {
 			}
 		});
 
-		GroupLayout jPanel7Layout = new GroupLayout(jPanel7);
-		jPanel7.setLayout(jPanel7Layout);
-		jPanel7Layout
-				.setHorizontalGroup(
-						jPanel7Layout
-								.createParallelGroup(
-										GroupLayout.Alignment.LEADING)
-								.addGroup(
-										jPanel7Layout.createSequentialGroup()
-												.addGap(35, 35,
-														35)
-												.addGroup(jPanel7Layout
-														.createParallelGroup(GroupLayout.Alignment.TRAILING)
-														.addComponent(jLabel6).addComponent(jLabel3)
-														.addComponent(jLabel7).addComponent(jLabel8))
-								.addGap(103, 103,
-										103)
+		GroupLayout jPanel7Layout = new GroupLayout(pnl_gInfo);
+		pnl_gInfo.setLayout(jPanel7Layout);
+		jPanel7Layout.setHorizontalGroup(jPanel7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+				.addGroup(jPanel7Layout.createSequentialGroup().addGap(35, 35, 35)
+						.addGroup(jPanel7Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+								.addComponent(lbl_gsln_gInfo).addComponent(lbl_type_gInfo).addComponent(lbl_lpg_gInfo)
+								.addComponent(lbl_dsl_gInfo))
+						.addGap(103, 103, 103)
 						.addGroup(jPanel7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-								.addGroup(jPanel7Layout.createSequentialGroup().addComponent(jLabel4)
-										.addGap(107, 107, 107).addComponent(jLabel5))
+								.addGroup(jPanel7Layout.createSequentialGroup().addComponent(lbl_vol_gInfo).addGap(107,
+										107, 107).addComponent(lbl_prc_gInfo))
 								.addGroup(jPanel7Layout.createSequentialGroup().addGap(19, 19, 19)
 										.addGroup(jPanel7Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
 												.addGroup(jPanel7Layout.createSequentialGroup()
-														.addComponent(jLabel11, GroupLayout.PREFERRED_SIZE, 45,
+														.addComponent(brdr_lpgVol_gInfo, GroupLayout.PREFERRED_SIZE, 45,
 																GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(jLabel12))
-												.addGroup(jPanel7Layout.createSequentialGroup()
-														.addComponent(jLabel15, GroupLayout.PREFERRED_SIZE, 45,
-																GroupLayout.PREFERRED_SIZE)
+														.addComponent(lbl_lpgL_gInfo))
+												.addGroup(jPanel7Layout.createSequentialGroup().addComponent(
+														brdr_gslnVol_gInfo, GroupLayout.PREFERRED_SIZE, 45,
+														GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(jLabel10, GroupLayout.PREFERRED_SIZE, 7,
+														.addComponent(lbl_gslnL_gInfo, GroupLayout.PREFERRED_SIZE, 7,
 																GroupLayout.PREFERRED_SIZE))
-												.addGroup(jPanel7Layout.createSequentialGroup()
-														.addComponent(jLabel13, GroupLayout.PREFERRED_SIZE, 45,
-																GroupLayout.PREFERRED_SIZE)
+												.addGroup(jPanel7Layout.createSequentialGroup().addComponent(
+														brdr_dslVol_gInfo, GroupLayout.PREFERRED_SIZE, 45,
+														GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(jLabel14)))
+														.addComponent(lbl_dslL_gInfo)))
 										.addGap(93, 93, 93)
 										.addGroup(jPanel7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 												.addGroup(jPanel7Layout.createSequentialGroup()
-														.addComponent(jLabel18, GroupLayout.PREFERRED_SIZE, 7,
+														.addComponent(lbl_dslD_gInfo, GroupLayout.PREFERRED_SIZE, 7,
 																GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(jLabel21, GroupLayout.PREFERRED_SIZE, 45,
+														.addComponent(brdr_dslPrc_gInfo, GroupLayout.PREFERRED_SIZE, 45,
 																GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(jLabel24))
+														.addComponent(lbl_dslPL_gInfo))
 												.addGroup(jPanel7Layout.createSequentialGroup()
-														.addComponent(jLabel16, GroupLayout.PREFERRED_SIZE, 7,
+														.addComponent(lbl_gslnD_gInfo, GroupLayout.PREFERRED_SIZE, 7,
 																GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(jLabel19, GroupLayout.PREFERRED_SIZE, 45,
-																GroupLayout.PREFERRED_SIZE)
+														.addComponent(brdr_gslnPrc_gInfo, GroupLayout.PREFERRED_SIZE,
+																45, GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(jLabel22))
+														.addComponent(lbl_gslnPL_gInfo))
 												.addGroup(jPanel7Layout.createSequentialGroup()
-														.addComponent(jLabel17, GroupLayout.PREFERRED_SIZE, 7,
+														.addComponent(lbl_lpgD_gInfo, GroupLayout.PREFERRED_SIZE, 7,
 																GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(jLabel20, GroupLayout.PREFERRED_SIZE, 45,
+														.addComponent(brdr_lpgPrc_gInfo, GroupLayout.PREFERRED_SIZE, 45,
 																GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-														.addComponent(jLabel23)))
+														.addComponent(lbl_lpgPL_gInfo)))
 										.addGap(74, 74, 74).addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, 160,
-												GroupLayout.PREFERRED_SIZE))).addContainerGap(71, Short.MAX_VALUE)));
-		jPanel7Layout.setVerticalGroup(jPanel7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel7Layout.createSequentialGroup().addGap(12, 12, 12)
-						.addGroup(jPanel7Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jLabel3).addComponent(jLabel4).addComponent(jLabel5))
-						.addGap(18, 18, 18)
-						.addGroup(
-								jPanel7Layout
+												GroupLayout.PREFERRED_SIZE)))
+						.addContainerGap(71, Short.MAX_VALUE)));
+		jPanel7Layout
+				.setVerticalGroup(jPanel7Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+						.addGroup(jPanel7Layout.createSequentialGroup().addGap(12, 12, 12)
+								.addGroup(jPanel7Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+										.addComponent(lbl_type_gInfo).addComponent(lbl_vol_gInfo)
+										.addComponent(lbl_prc_gInfo))
+								.addGap(18, 18,
+										18)
+								.addGroup(jPanel7Layout
 										.createParallelGroup(GroupLayout.Alignment.LEADING,
 												false)
 										.addGroup(
@@ -301,605 +295,605 @@ public class MainFrame extends JFrame {
 																jPanel7Layout
 																		.createParallelGroup(
 																				GroupLayout.Alignment.BASELINE)
-																		.addComponent(jLabel6).addComponent(jLabel10)
-																		.addComponent(jLabel15).addComponent(jLabel16)
-																		.addComponent(jLabel19).addComponent(jLabel22))
+																		.addComponent(lbl_gsln_gInfo)
+																		.addComponent(lbl_gslnL_gInfo)
+																		.addComponent(brdr_gslnVol_gInfo)
+																		.addComponent(lbl_gslnD_gInfo)
+																		.addComponent(brdr_gslnPrc_gInfo)
+																		.addComponent(lbl_gslnPL_gInfo))
 														.addGap(18, 18, 18)
 														.addGroup(
 																jPanel7Layout
 																		.createParallelGroup(
 																				GroupLayout.Alignment.BASELINE)
-																		.addComponent(jLabel7).addComponent(jLabel11)
-																		.addComponent(jLabel12).addComponent(jLabel17)
-																		.addComponent(jLabel20).addComponent(jLabel23))
-												.addGap(20, 20,
-														20).addGroup(
+																		.addComponent(lbl_lpg_gInfo)
+																		.addComponent(brdr_lpgVol_gInfo)
+																		.addComponent(lbl_lpgL_gInfo)
+																		.addComponent(lbl_lpgD_gInfo)
+																		.addComponent(brdr_lpgPrc_gInfo)
+																		.addComponent(lbl_lpgPL_gInfo))
+														.addGap(20, 20, 20).addGroup(
 																jPanel7Layout
 																		.createParallelGroup(
 																				GroupLayout.Alignment.BASELINE)
-																		.addComponent(jLabel8).addComponent(jLabel13)
-																		.addComponent(jLabel14).addComponent(jLabel18)
-																		.addComponent(jLabel21).addComponent(jLabel24)))
-										.addComponent(jTextField1))
-						.addGap(0, 45, Short.MAX_VALUE)));
+																		.addComponent(lbl_dsl_gInfo)
+																		.addComponent(brdr_dslVol_gInfo)
+																		.addComponent(lbl_dslL_gInfo)
+																		.addComponent(lbl_dslD_gInfo)
+																		.addComponent(brdr_dslPrc_gInfo)
+																		.addComponent(lbl_dslPL_gInfo)))
+								.addComponent(jTextField1)).addGap(0, 45, Short.MAX_VALUE)));
 
-		jPanel8.setBorder(BorderFactory.createTitledBorder("Sale"));
-		jPanel8.setPreferredSize(new java.awt.Dimension(709, 173));
+		pnl_sl.setBorder(BorderFactory.createTitledBorder("Sale"));
+		pnl_sl.setPreferredSize(new java.awt.Dimension(709, 173));
 
-		jLabel9.setText("Kind of Gas");
+		lbl_type_sl.setText("Kind of Gas");
 
-		jComboBox1.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+		cmb_type_sl.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		jRadioButton1.setText("By Money");
-		jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+		rd_mn_sl.setText("By Money");
+		rd_mn_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jRadioButton1ActionPerformed(evt);
 
 			}
 		});
 
-		jRadioButton2.setText("By Volume");
+		rd_vol_sl.setText("By Volume");
 
-		jLabel25.setText("$");
+		lbl_mnD_sl.setText("$");
 
-		jLabel26.setHorizontalAlignment(SwingConstants.CENTER);
-		jLabel26.setText("00");
-		jLabel26.setBorder(BorderFactory.createEtchedBorder());
+		brdr_vol_sl.setHorizontalAlignment(SwingConstants.CENTER);
+		brdr_vol_sl.setText("00");
+		brdr_vol_sl.setBorder(BorderFactory.createEtchedBorder());
 
-		jLabel27.setHorizontalAlignment(SwingConstants.CENTER);
-		jLabel27.setText("00");
-		jLabel27.setBorder(BorderFactory.createEtchedBorder());
+		brdr_mn_sl.setHorizontalAlignment(SwingConstants.CENTER);
+		brdr_mn_sl.setText("00");
+		brdr_mn_sl.setBorder(BorderFactory.createEtchedBorder());
 
-		jLabel28.setText("L");
+		lbl_volL_sl.setText("L");
 
-		jCheckBox1.setText("Use Mileage");
+		chk_mlg_sl.setText("Use Mileage");
 
-		jTextField6.setEditable(false);
-		jTextField6.setHorizontalAlignment(JTextField.CENTER);
-		jTextField6.setText("00");
+		txt_mlg_sl.setEditable(false);
+		txt_mlg_sl.setHorizontalAlignment(JTextField.CENTER);
+		txt_mlg_sl.setText("00");
 
-		jButton4.setText("OK");
+		btn_ok_sl.setText("OK");
 
-		jButton5.setText("Cancel");
+		btn_cncl_sl.setText("Cancel");
 
-		GroupLayout jPanel8Layout = new GroupLayout(jPanel8);
-		jPanel8.setLayout(jPanel8Layout);
+		GroupLayout jPanel8Layout = new GroupLayout(pnl_sl);
+		pnl_sl.setLayout(jPanel8Layout);
 		jPanel8Layout.setHorizontalGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel8Layout.createSequentialGroup().addGap(34, 34, 34)
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 								.addGroup(jPanel8Layout.createSequentialGroup().addGap(21, 21, 21)
-										.addComponent(jButton4).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
+										.addComponent(btn_ok_sl).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
 												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 						.addGroup(jPanel8Layout.createSequentialGroup()
 								.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-										.addComponent(jRadioButton2).addComponent(jCheckBox1)
+										.addComponent(rd_vol_sl).addComponent(chk_mlg_sl)
 										.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-												.addComponent(jLabel9).addComponent(jRadioButton1)))
+												.addComponent(lbl_type_sl).addComponent(rd_mn_sl)))
 								.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE,
 										Short.MAX_VALUE)))
-						.addComponent(jLabel25, GroupLayout.PREFERRED_SIZE, 7, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(jPanel8Layout
-								.createParallelGroup(
-										GroupLayout.Alignment.LEADING)
-								.addGroup(jPanel8Layout.createSequentialGroup()
-										.addGroup(jPanel8Layout
-												.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-												.addComponent(jTextField6)
-												.addComponent(jComboBox1, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(jLabel27, GroupLayout.DEFAULT_SIZE,
+						.addComponent(lbl_mnD_sl, GroupLayout.PREFERRED_SIZE, 7, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(
+								LayoutStyle.ComponentPlacement.RELATED)
+						.addGroup(
+								jPanel8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+										.addGroup(
+												jPanel8Layout.createSequentialGroup()
+														.addGroup(jPanel8Layout
+																.createParallelGroup(GroupLayout.Alignment.LEADING,
+																		false)
+																.addComponent(txt_mlg_sl)
+																.addComponent(cmb_type_sl, 0, GroupLayout.DEFAULT_SIZE,
+																		Short.MAX_VALUE)
+												.addComponent(brdr_mn_sl, GroupLayout.DEFAULT_SIZE,
 														GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(jLabel26, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										.addComponent(brdr_vol_sl, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 												Short.MAX_VALUE))
-										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabel28))
-								.addComponent(jButton5))
+										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+										.addComponent(lbl_volL_sl)).addComponent(btn_cncl_sl))
 						.addGap(64, 64, 64)));
 		jPanel8Layout.setVerticalGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel8Layout.createSequentialGroup().addContainerGap(22, Short.MAX_VALUE)
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jLabel9).addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE,
+								.addComponent(lbl_type_sl).addComponent(cmb_type_sl, GroupLayout.PREFERRED_SIZE,
 										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGap(18, 18, 18)
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jRadioButton1, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-								.addComponent(jLabel25).addComponent(jLabel27))
+								.addComponent(rd_mn_sl, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lbl_mnD_sl).addComponent(brdr_mn_sl))
 						.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jRadioButton2).addComponent(jLabel26).addComponent(jLabel28))
+								.addComponent(rd_vol_sl).addComponent(brdr_vol_sl).addComponent(lbl_volL_sl))
 						.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jCheckBox1).addComponent(jTextField6, GroupLayout.PREFERRED_SIZE,
+								.addComponent(chk_mlg_sl).addComponent(txt_mlg_sl, GroupLayout.PREFERRED_SIZE,
 										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-								.addComponent(jButton4).addComponent(jButton5))));
+								.addComponent(btn_ok_sl).addComponent(btn_cncl_sl))));
 
-		jPanel9.setBorder(BorderFactory.createTitledBorder("Customer Information"));
+		pnl_cInfo.setBorder(BorderFactory.createTitledBorder("Customer Information"));
 
-		jLabel29.setText("Name");
+		lbl_nm_cInfo.setText("Name");
 
-		jLabel30.setText("Number");
+		lbl_nmbr_cInfo.setText("Number");
 
-		jTextField2.setText("jTextField2");
+		txt_nm_cInfo.setText("txt_nm_cInfo");
 
-		jTextField3.setText("jTextField3");
+		txt_nmbr_cInfo.setText("txt_nmbr_cInfo");
 
-		jLabel31.setText("Mileage");
+		lbl_mlg_cInfo.setText("Mileage");
 
-		jTextField4.setEditable(false);
-		jTextField4.setText("jTextField4");
-		jTextField4.setBorder(BorderFactory.createEtchedBorder());
+		txt_mlg_cInfo.setEditable(false);
+		txt_mlg_cInfo.setText("txt_mlg_cInfo");
+		txt_mlg_cInfo.setBorder(BorderFactory.createEtchedBorder());
 
-		jButton2.setText("Check");
-		jButton2.addActionListener(new java.awt.event.ActionListener() {
+		btn_chk_cInfo.setText("Check");
+		btn_chk_cInfo.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton2ActionPerformed(evt);
 			}
 		});
 
-		jButton3.setText("Enroll");
+		btn_enrl_cInfo.setText("Enroll");
 
-		GroupLayout jPanel9Layout = new GroupLayout(jPanel9);
-		jPanel9.setLayout(jPanel9Layout);
+		GroupLayout jPanel9Layout = new GroupLayout(pnl_cInfo);
+		pnl_cInfo.setLayout(jPanel9Layout);
 		jPanel9Layout.setHorizontalGroup(jPanel9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel9Layout.createSequentialGroup().addGap(62, 62, 62).addGroup(jPanel9Layout
 						.createParallelGroup(GroupLayout.Alignment.LEADING)
-						.addGroup(jPanel9Layout.createSequentialGroup().addGap(47, 47, 47).addComponent(jButton2)
+						.addGroup(jPanel9Layout.createSequentialGroup().addGap(47, 47, 47).addComponent(btn_chk_cInfo)
 								.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE,
 										Short.MAX_VALUE)
-								.addComponent(jButton3).addGap(12, 12, 12))
+								.addComponent(btn_enrl_cInfo).addGap(12, 12, 12))
 						.addGroup(jPanel9Layout.createSequentialGroup()
 								.addGroup(jPanel9Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-										.addComponent(jLabel30, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)
-								.addComponent(jLabel29, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE).addComponent(jLabel31, GroupLayout.DEFAULT_SIZE,
+										.addComponent(lbl_nmbr_cInfo, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(lbl_nm_cInfo, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE).addComponent(lbl_mlg_cInfo, GroupLayout.DEFAULT_SIZE,
 												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 								.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE,
 										Short.MAX_VALUE)
 								.addGroup(jPanel9Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-										.addComponent(jTextField3, GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-										.addComponent(jTextField2).addComponent(jTextField4))))
+										.addComponent(txt_nmbr_cInfo, GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+										.addComponent(txt_nm_cInfo).addComponent(txt_mlg_cInfo))))
 						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 		jPanel9Layout.setVerticalGroup(jPanel9Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel9Layout.createSequentialGroup().addGap(25, 25, 25)
 						.addGroup(jPanel9Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jLabel29).addComponent(jTextField2, GroupLayout.PREFERRED_SIZE,
+								.addComponent(lbl_nm_cInfo).addComponent(txt_nm_cInfo, GroupLayout.PREFERRED_SIZE,
 										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
 						.addGroup(jPanel9Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jLabel30).addComponent(jTextField3, GroupLayout.PREFERRED_SIZE,
+								.addComponent(lbl_nmbr_cInfo).addComponent(txt_nmbr_cInfo, GroupLayout.PREFERRED_SIZE,
 										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
 						.addGroup(jPanel9Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jLabel31).addComponent(jTextField4, GroupLayout.PREFERRED_SIZE,
+								.addComponent(lbl_mlg_cInfo).addComponent(txt_mlg_cInfo, GroupLayout.PREFERRED_SIZE,
 										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGap(18, 18, 18)
 						.addGroup(jPanel9Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jButton2).addComponent(jButton3))
+								.addComponent(btn_chk_cInfo).addComponent(btn_enrl_cInfo))
 						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
-		GroupLayout jPanel4Layout = new GroupLayout(jPanel4);
-		jPanel4.setLayout(jPanel4Layout);
+		GroupLayout jPanel4Layout = new GroupLayout(tab_sl);
+		tab_sl.setLayout(jPanel4Layout);
 		jPanel4Layout.setHorizontalGroup(jPanel4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel4Layout.createSequentialGroup()
 						.addGroup(jPanel4Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
 								.addGroup(jPanel4Layout.createSequentialGroup().addGap(1, 1, 1)
-										.addComponent(jPanel8, GroupLayout.PREFERRED_SIZE, 399,
+										.addComponent(pnl_sl, GroupLayout.PREFERRED_SIZE, 399,
 												GroupLayout.PREFERRED_SIZE)
 								.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-								.addComponent(jPanel9, GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))
-						.addComponent(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(pnl_cInfo, GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))
+						.addComponent(pnl_gInfo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 								GroupLayout.PREFERRED_SIZE))
 						.addGap(0, 3, Short.MAX_VALUE)));
 		jPanel4Layout
 				.setVerticalGroup(jPanel4Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 						.addGroup(jPanel4Layout.createSequentialGroup()
-								.addComponent(jPanel7, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(pnl_gInfo, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 										Short.MAX_VALUE)
 								.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
 								.addGroup(jPanel4Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-										.addComponent(jPanel8, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-										.addComponent(jPanel9, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE))));
+										.addComponent(pnl_sl, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+										.addComponent(pnl_cInfo, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE))));
 
-		jTabbedPane1.addTab("Sale", jPanel4);
+		tabbedPane.addTab("Sale", tab_sl);
 
-		jPanel2.setBorder(BorderFactory.createTitledBorder("Check When"));
+		pnl_chk.setBorder(BorderFactory.createTitledBorder("Check When"));
 
-		jRadioButton8.setText("Today");
+		rd_tdy_chk.setText("Today");
 
-		jRadioButton9.setText("Date           :");
-		jRadioButton9.addActionListener(new java.awt.event.ActionListener() {
+		rd_date_chk.setText("Date           :");
+		rd_date_chk.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jRadioButton9ActionPerformed(evt);
 			}
 		});
 
-		jRadioButton10.setText("This month");
+		rd_mnth_chk.setText("This month");
 
-		jRadioButton11.setText("Month        :");
+		rd_prd_chk.setText("Month        :");
 
-		jRadioButton12.setText("From.. To..");
-		jRadioButton12.addActionListener(new java.awt.event.ActionListener() {
+		rd_frmTo_chk.setText("From.. To..");
+		rd_frmTo_chk.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jRadioButton12ActionPerformed(evt);
 			}
 		});
 
-		jComboBox7.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+		cmb_yy_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		jComboBox8.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+		cmb_mm_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		jComboBox9.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+		cmb_dd_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		jComboBox10.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+		cmb_frm_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		jComboBox11.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+		cmb_to_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		jTextField7.setEditable(false);
-		jTextField7.setHorizontalAlignment(JTextField.CENTER);
-		jTextField7.setText("19900417");
-		jTextField7.addActionListener(new java.awt.event.ActionListener() {
+		txt_frm_chk.setEditable(false);
+		txt_frm_chk.setHorizontalAlignment(JTextField.CENTER);
+		txt_frm_chk.setText("19900417");
+		txt_frm_chk.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jTextField7ActionPerformed(evt);
 			}
 		});
 
-		jLabel32.setText("To");
+		lbl_to_chk.setText("To");
 
-		jTextField5.setEditable(false);
-		jTextField5.setHorizontalAlignment(JTextField.CENTER);
-		jTextField5.setText("20151117");
-		jTextField5.addActionListener(new java.awt.event.ActionListener() {
+		txt_to_chk.setEditable(false);
+		txt_to_chk.setHorizontalAlignment(JTextField.CENTER);
+		txt_to_chk.setText("20151117");
+		txt_to_chk.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jTextField5ActionPerformed(evt);
 			}
 		});
 
-		jButton1.setText("Check");
+		btn_chk_chk.setText("Check");
 
-		GroupLayout jPanel2Layout = new GroupLayout(jPanel2);
-		jPanel2.setLayout(jPanel2Layout);
+		GroupLayout jPanel2Layout = new GroupLayout(pnl_chk);
+		pnl_chk.setLayout(jPanel2Layout);
 		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel2Layout.createSequentialGroup().addGap(32, 32, 32).addGroup(jPanel2Layout
-						.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(jRadioButton8)
-						.addComponent(jRadioButton10)
-						.addGroup(jPanel2Layout.createSequentialGroup().addComponent(jRadioButton9).addGap(18, 18, 18)
-								.addComponent(jComboBox7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(rd_tdy_chk)
+						.addComponent(rd_mnth_chk)
+						.addGroup(jPanel2Layout.createSequentialGroup().addComponent(rd_date_chk).addGap(18, 18, 18)
+								.addComponent(cmb_yy_chk, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
 								.addGap(18, 18, 18)
-								.addComponent(jComboBox8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(cmb_mm_chk, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addGap(18, 18, 18).addComponent(jComboBox9, GroupLayout.PREFERRED_SIZE,
+								.addGap(18, 18, 18).addComponent(cmb_dd_chk, GroupLayout.PREFERRED_SIZE,
 										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGroup(jPanel2Layout.createSequentialGroup()
 								.addGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-										.addComponent(jRadioButton11).addComponent(jRadioButton12))
+										.addComponent(rd_prd_chk).addComponent(rd_frmTo_chk))
 								.addGap(18, 18, 18)
 								.addGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 										.addGroup(jPanel2Layout.createSequentialGroup()
-												.addComponent(jComboBox10, GroupLayout.PREFERRED_SIZE,
+												.addComponent(cmb_frm_chk, GroupLayout.PREFERRED_SIZE,
 														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addGap(18, 18, 18).addComponent(jComboBox11,
-														GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-														GroupLayout.PREFERRED_SIZE))
+												.addGap(18, 18, 18).addComponent(cmb_to_chk, GroupLayout.PREFERRED_SIZE,
+														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 										.addGroup(jPanel2Layout.createSequentialGroup()
-												.addComponent(jTextField7, GroupLayout.PREFERRED_SIZE, 91,
+												.addComponent(txt_frm_chk, GroupLayout.PREFERRED_SIZE, 91,
 														GroupLayout.PREFERRED_SIZE)
 												.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-												.addComponent(jLabel32)
+												.addComponent(lbl_to_chk)
 												.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-												.addComponent(jTextField5, GroupLayout.PREFERRED_SIZE, 114,
+												.addComponent(txt_to_chk, GroupLayout.PREFERRED_SIZE, 114,
 														GroupLayout.PREFERRED_SIZE)
 												.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
 														GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 90,
+												.addComponent(btn_chk_chk, GroupLayout.PREFERRED_SIZE, 90,
 														GroupLayout.PREFERRED_SIZE)))))
 						.addGap(50, 50, 50)));
 		jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel2Layout.createSequentialGroup().addGap(18, 18, 18).addComponent(jRadioButton8)
+				.addGroup(jPanel2Layout.createSequentialGroup().addGap(18, 18, 18).addComponent(rd_tdy_chk)
 						.addGap(10, 10, 10)
 						.addGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jRadioButton9)
-								.addComponent(jComboBox7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(rd_date_chk)
+								.addComponent(cmb_yy_chk, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(jComboBox8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(cmb_mm_chk, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(jComboBox9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(cmb_dd_chk, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE))
-						.addGap(18, 18, 18).addComponent(jRadioButton10).addGap(18, 18, 18)
+						.addGap(18, 18, 18).addComponent(rd_mnth_chk).addGap(18, 18, 18)
 						.addGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jRadioButton11)
-								.addComponent(jComboBox10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(rd_prd_chk)
+								.addComponent(cmb_frm_chk, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(jComboBox11, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(cmb_to_chk, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE))
 						.addGap(18, 18, 18)
 						.addGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jRadioButton12)
-								.addComponent(jTextField7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(rd_frmTo_chk)
+								.addComponent(txt_frm_chk, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(jLabel32).addComponent(jTextField5, GroupLayout.PREFERRED_SIZE,
+								.addComponent(lbl_to_chk).addComponent(txt_to_chk, GroupLayout.PREFERRED_SIZE,
 										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addContainerGap(35, Short.MAX_VALUE))
 				.addGroup(GroupLayout.Alignment.TRAILING,
 						jPanel2Layout.createSequentialGroup().addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(jButton1).addContainerGap()));
+								.addComponent(btn_chk_chk).addContainerGap()));
 
-		jPanel1.setBorder(BorderFactory.createTitledBorder("Result"));
+		pnl_res.setBorder(BorderFactory.createTitledBorder("Result"));
 
-		jLabel33.setText("Kind of Gas");
+		lbl_type_res.setText("Kind of Gas");
 
-		jLabel34.setHorizontalAlignment(SwingConstants.CENTER);
-		jLabel34.setText("Volume");
+		lbl_vol_res.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_vol_res.setText("Volume");
 
-		jLabel35.setHorizontalAlignment(SwingConstants.CENTER);
-		jLabel35.setText("Sum");
+		lbl_sum_res.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_sum_res.setText("Sum");
 
-		jComboBox2.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+		cmb_type_res.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		jTextField8.setEditable(false);
-		jTextField8.setText("jTextField8");
-		jTextField8.addActionListener(new java.awt.event.ActionListener() {
+		txt_vol_res.setEditable(false);
+		txt_vol_res.setText("txt_vol_res");
+		txt_vol_res.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jTextField8ActionPerformed(evt);
 			}
 		});
 
-		jTextField9.setEditable(false);
-		jTextField9.setText("jTextField8");
+		txt_sum_res.setEditable(false);
+		txt_sum_res.setText("txt_vol_res");
 
-		jLabel36.setText("$");
+		lbl_sumD_res.setText("$");
 
-		jLabel37.setText("L");
+		lbl_volL_res.setText("L");
 
-		GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
-		jPanel1.setLayout(jPanel1Layout);
+		GroupLayout jPanel1Layout = new GroupLayout(pnl_res);
+		pnl_res.setLayout(jPanel1Layout);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel1Layout.createSequentialGroup().addGap(55, 55, 55)
 						.addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-								.addComponent(jLabel33).addComponent(jComboBox2, GroupLayout.PREFERRED_SIZE,
+								.addComponent(lbl_type_res).addComponent(cmb_type_res, GroupLayout.PREFERRED_SIZE,
 										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 								.addGroup(jPanel1Layout.createSequentialGroup().addGap(183, 183, 183).addComponent(
-										jLabel34, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE))
+										lbl_vol_res, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE))
 								.addGroup(jPanel1Layout.createSequentialGroup().addGap(178, 178, 178)
-										.addComponent(jTextField8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										.addComponent(txt_vol_res, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabel37)
+										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+										.addComponent(lbl_volL_res)
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 233, Short.MAX_VALUE)
-										.addComponent(jLabel36)))
+										.addComponent(lbl_sumD_res)))
 						.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
 						.addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-								.addComponent(jLabel35, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE)
-								.addComponent(jTextField9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(lbl_sum_res, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txt_sum_res, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE))
 						.addGap(75, 75, 75)));
 		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel1Layout.createSequentialGroup().addGap(18, 18, 18)
 						.addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jLabel33).addComponent(jLabel34).addComponent(jLabel35))
+								.addComponent(lbl_type_res).addComponent(lbl_vol_res).addComponent(lbl_sum_res))
 						.addGap(26, 26, 26)
 						.addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-								.addComponent(jLabel36)
+								.addComponent(lbl_sumD_res)
 								.addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-										.addComponent(jComboBox2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										.addComponent(cmb_type_res, GroupLayout.PREFERRED_SIZE,
+												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(txt_sum_res, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 												GroupLayout.PREFERRED_SIZE)
-										.addComponent(jTextField9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										.addComponent(txt_vol_res, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 												GroupLayout.PREFERRED_SIZE)
-										.addComponent(jTextField8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(jLabel37)))
+										.addComponent(lbl_volL_res)))
 						.addContainerGap(43, Short.MAX_VALUE)));
 
-		GroupLayout jPanel5Layout = new GroupLayout(jPanel5);
-		jPanel5.setLayout(jPanel5Layout);
+		GroupLayout jPanel5Layout = new GroupLayout(tab_chk);
+		tab_chk.setLayout(jPanel5Layout);
 		jPanel5Layout.setHorizontalGroup(jPanel5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-				.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-				.addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+				.addComponent(pnl_chk, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addComponent(pnl_res, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 		jPanel5Layout.setVerticalGroup(jPanel5Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel5Layout.createSequentialGroup()
-						.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						.addComponent(pnl_chk, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 								GroupLayout.PREFERRED_SIZE)
 						.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE,
 								Short.MAX_VALUE)
-						.addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						.addComponent(pnl_res, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 								GroupLayout.PREFERRED_SIZE)));
 
-		jTabbedPane1.addTab("Check", jPanel5);
+		tabbedPane.addTab("Check", tab_chk);
 
-		jPanel3.setBorder(BorderFactory.createTitledBorder("Change Price"));
+		pnl_prc.setBorder(BorderFactory.createTitledBorder("Change Price"));
 
-		jLabel38.setText("Kind of Gas");
+		lbl_type_prc.setText("Kind of Gas");
 
-		jComboBox3.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+		cmb_type_prc.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		jLabel39.setText("Current Price (/L)");
+		lbl_crnt_prc.setText("Current Price (/L)");
 
-		jLabel40.setText("New Price (/L)");
+		lbl_nw_prc.setText("New Price (/L)");
 
-		jLabel41.setText("Sure to Change?");
+		lbl_chg_prc.setText("Sure to Change?");
 
-		jTextField10.setEditable(false);
-		jTextField10.setText("jTextField10");
+		txt_crnt_prc.setEditable(false);
+		txt_crnt_prc.setText("txt_crnt_prc");
 
-		jTextField11.setText("jTextField10");
+		txt_nw_prc.setText("txt_crnt_prc");
 
-		jCheckBox2.setText("YES");
+		chk_y_prc.setText("YES");
 
-		jButton6.setText("Change");
+		btn_chg_prc.setText("Change");
 
-		jButton7.setText("Cancel");
+		btn_cncl_prc.setText("Cancel");
 
-		GroupLayout jPanel3Layout = new GroupLayout(jPanel3);
-		jPanel3.setLayout(jPanel3Layout);
+		GroupLayout jPanel3Layout = new GroupLayout(pnl_prc);
+		pnl_prc.setLayout(jPanel3Layout);
 		jPanel3Layout.setHorizontalGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel3Layout.createSequentialGroup().addGap(39, 39, 39)
 						.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-								.addComponent(jLabel38).addComponent(jComboBox3, GroupLayout.PREFERRED_SIZE,
+								.addComponent(lbl_type_prc).addComponent(cmb_type_prc, GroupLayout.PREFERRED_SIZE,
 										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGap(109, 109, 109)
 						.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-								.addComponent(jTextField10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(txt_crnt_prc, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(jLabel39).addComponent(jButton6))
-						.addGap(112, 112, 112).addGroup(
-								jPanel3Layout
-										.createParallelGroup(
-												GroupLayout.Alignment.TRAILING)
-										.addGroup(GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-												.addGroup(jPanel3Layout
-														.createParallelGroup(GroupLayout.Alignment.TRAILING)
-														.addComponent(jButton7).addComponent(jLabel40))
+								.addComponent(lbl_crnt_prc).addComponent(btn_chg_prc))
+						.addGap(112, 112, 112)
+						.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+								.addGroup(GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+										.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+												.addComponent(btn_cncl_prc).addComponent(lbl_nw_prc))
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
-										.addComponent(jLabel41).addGap(71, 71, 71))
+										.addComponent(lbl_chg_prc).addGap(71, 71, 71))
 								.addGroup(jPanel3Layout.createSequentialGroup()
-										.addComponent(jTextField11, GroupLayout.PREFERRED_SIZE,
-												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(txt_nw_prc, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
 												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(jCheckBox2).addGap(92, 92, 92)))));
-		jPanel3Layout
-				.setVerticalGroup(
-						jPanel3Layout
-								.createParallelGroup(
-										GroupLayout.Alignment.LEADING)
-								.addGroup(
-										jPanel3Layout.createSequentialGroup()
-												.addGap(21, 21,
-														21)
-												.addGroup(jPanel3Layout
-														.createParallelGroup(GroupLayout.Alignment.BASELINE)
-														.addComponent(jLabel38).addComponent(jLabel39)
-														.addComponent(jLabel40).addComponent(jLabel41))
-								.addGap(40, 40, 40)
-								.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-										.addComponent(jComboBox3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(jTextField10, GroupLayout.PREFERRED_SIZE,
-												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(jTextField11, GroupLayout.PREFERRED_SIZE,
-												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(jCheckBox2))
+										.addComponent(chk_y_prc).addGap(92, 92, 92)))));
+		jPanel3Layout.setVerticalGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+				.addGroup(jPanel3Layout.createSequentialGroup().addGap(21, 21, 21)
+						.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+								.addComponent(lbl_type_prc).addComponent(lbl_crnt_prc).addComponent(lbl_nw_prc)
+								.addComponent(lbl_chg_prc))
+						.addGap(40, 40, 40)
+						.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+								.addComponent(cmb_type_prc, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(txt_crnt_prc, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(txt_nw_prc, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(chk_y_prc))
 						.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
 						.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jButton6).addComponent(jButton7)).addContainerGap()));
+								.addComponent(btn_chg_prc).addComponent(btn_cncl_prc))
+						.addContainerGap()));
 
-		jPanel11.setBorder(BorderFactory.createTitledBorder("Order"));
+		pnl_odr.setBorder(BorderFactory.createTitledBorder("Order"));
 
-		jLabel42.setText("Kind of Gas");
+		lbl_type_odr.setText("Kind of Gas");
 
-		jComboBox4.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+		cmb_type_odr.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		jTextField12.setEditable(false);
-		jTextField12.setText("jTextField10");
+		txt_crnt_odr.setEditable(false);
+		txt_crnt_odr.setText("txt_crnt_prc");
 
-		jLabel43.setText("Current Volume");
+		lbl_crnt_odr.setText("Current Volume");
 
-		jLabel44.setText("How much litter");
+		lbl_add_odr.setText("How much litter");
 
-		jTextField13.setText("jTextField10");
+		txt_add_odr.setText("txt_crnt_prc");
 
-		jLabel45.setText("Sure to Order?");
+		lbl_chk_odr.setText("Sure to Order?");
 
-		jCheckBox3.setText("YES");
+		chk_y_odr.setText("YES");
 
-		jButton8.setText("Order");
+		btn_odr_odr.setText("Order");
 
-		jButton9.setText("Cancel");
+		btn_cncl_odr.setText("Cancel");
 
-		GroupLayout jPanel11Layout = new GroupLayout(jPanel11);
-		jPanel11.setLayout(jPanel11Layout);
+		GroupLayout jPanel11Layout = new GroupLayout(pnl_odr);
+		pnl_odr.setLayout(jPanel11Layout);
 		jPanel11Layout.setHorizontalGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel11Layout.createSequentialGroup().addGap(34, 34, 34)
 						.addGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-								.addComponent(jLabel42).addComponent(jComboBox4, GroupLayout.PREFERRED_SIZE,
+								.addComponent(lbl_type_odr).addComponent(cmb_type_odr, GroupLayout.PREFERRED_SIZE,
 										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGap(119, 119, 119)
 						.addGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-								.addComponent(jLabel43)
-								.addComponent(jTextField12, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(lbl_crnt_odr)
+								.addComponent(txt_crnt_odr, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(jButton8))
+								.addComponent(btn_odr_odr))
 						.addGap(123, 123, 123)
 						.addGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-								.addGroup(jPanel11Layout.createSequentialGroup().addComponent(jButton9).addGap(0, 0,
+								.addGroup(jPanel11Layout.createSequentialGroup().addComponent(btn_cncl_odr).addGap(0, 0,
 										Short.MAX_VALUE))
-								.addGroup(jPanel11Layout.createSequentialGroup().addComponent(jLabel44)
+								.addGroup(jPanel11Layout.createSequentialGroup().addComponent(lbl_add_odr)
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
 												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(jLabel45).addGap(78, 78, 78))
+										.addComponent(lbl_chk_odr).addGap(78, 78, 78))
 								.addGroup(jPanel11Layout.createSequentialGroup()
-										.addComponent(jTextField13, GroupLayout.PREFERRED_SIZE,
-												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(txt_add_odr, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
 												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(jCheckBox3).addGap(98, 98, 98)))));
+										.addComponent(chk_y_odr).addGap(98, 98, 98)))));
 		jPanel11Layout.setVerticalGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel11Layout.createSequentialGroup().addGap(27, 27, 27)
 						.addGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 								.addGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-										.addComponent(jLabel44).addComponent(jLabel45))
+										.addComponent(lbl_add_odr).addComponent(lbl_chk_odr))
 						.addGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jLabel42).addComponent(jLabel43)))
+								.addComponent(lbl_type_odr).addComponent(lbl_crnt_odr)))
 						.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
 						.addGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jComboBox4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(cmb_type_odr, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(jTextField12, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(txt_crnt_odr, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(jTextField13, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(txt_add_odr, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(jCheckBox3))
+								.addComponent(chk_y_odr))
 						.addGap(34, 34, 34).addGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(jButton9).addComponent(jButton8))
+								.addComponent(btn_cncl_odr).addComponent(btn_odr_odr))
 						.addContainerGap()));
 
-		GroupLayout jPanel6Layout = new GroupLayout(jPanel6);
-		jPanel6.setLayout(jPanel6Layout);
+		GroupLayout jPanel6Layout = new GroupLayout(tab_prc);
+		tab_prc.setLayout(jPanel6Layout);
 		jPanel6Layout
 				.setHorizontalGroup(
 						jPanel6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-								.addComponent(jPanel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								.addComponent(pnl_prc, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 										Short.MAX_VALUE)
-								.addComponent(jPanel11, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
+								.addComponent(pnl_odr, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 		jPanel6Layout.setVerticalGroup(jPanel6Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-						.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						.addComponent(pnl_prc, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 								GroupLayout.PREFERRED_SIZE)
 						.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(jPanel11, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+						.addComponent(pnl_odr, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
-		jTabbedPane1.addTab("Price & Order", jPanel6);
+		tabbedPane.addTab("Price & Order", tab_prc);
 
-		jLabel1.setText("Welcome to Gas Manger!!");
+		lbl_wlcm.setText("Welcome to Gas Manger!!");
 
-		jLabel2.setText("Today is 0000-00-00");
+		lbl_date.setText("Today is 0000-00-00");
 
 		GroupLayout layout = new GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
-		layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout
-				.createSequentialGroup().addGap(30, 30, 30)
-				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+		layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+				.addGroup(layout.createSequentialGroup().addGap(30, 30, 30)
+						.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+								.addGroup(layout.createSequentialGroup()
+										.addComponent(tabbedPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addContainerGap(32, Short.MAX_VALUE))
 						.addGroup(layout.createSequentialGroup()
-								.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(32, Short.MAX_VALUE))
-						.addGroup(layout.createSequentialGroup()
-								.addComponent(jLabel1).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
+								.addComponent(lbl_wlcm).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
 										GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(jLabel2).addGap(50, 50, 50)))));
+								.addComponent(lbl_date).addGap(50, 50, 50)))));
 		layout.setVerticalGroup(
 				layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(GroupLayout.Alignment.TRAILING,
 						layout.createSequentialGroup().addContainerGap()
 								.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-										.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 15,
+										.addComponent(lbl_wlcm, GroupLayout.PREFERRED_SIZE, 15,
 												GroupLayout.PREFERRED_SIZE)
-										.addComponent(jLabel2))
+										.addComponent(lbl_date))
 								.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE,
 										Short.MAX_VALUE)
-						.addComponent(jTabbedPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+						.addComponent(tabbedPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 								GroupLayout.PREFERRED_SIZE).addGap(29, 29, 29)));
 
 		pack();
@@ -982,104 +976,104 @@ public class MainFrame extends JFrame {
 	}
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
-	private JButton jButton1;
-	private JButton jButton2;
-	private JButton jButton3;
-	private JButton jButton4;
-	private JButton jButton5;
-	private JButton jButton6;
-	private JButton jButton7;
-	private JButton jButton8;
-	private JButton jButton9;
-	private JCheckBox jCheckBox1;
-	private JCheckBox jCheckBox2;
-	private JCheckBox jCheckBox3;
-	private JComboBox<String> jComboBox1;
-	private JComboBox<String> jComboBox10;
-	private JComboBox<String> jComboBox11;
-	private JComboBox<String> jComboBox2;
-	private JComboBox<String> jComboBox3;
-	private JComboBox<String> jComboBox4;
-	private JComboBox<String> jComboBox7;
-	private JComboBox<String> jComboBox8;
-	private JComboBox<String> jComboBox9;
-	private JLabel jLabel1;
-	private JLabel jLabel10;
-	private JLabel jLabel11;
-	private JLabel jLabel12;
-	private JLabel jLabel13;
-	private JLabel jLabel14;
-	private JLabel jLabel15;
-	private JLabel jLabel16;
-	private JLabel jLabel17;
-	private JLabel jLabel18;
-	private JLabel jLabel19;
-	private JLabel jLabel2;
-	private JLabel jLabel20;
-	private JLabel jLabel21;
-	private JLabel jLabel22;
-	private JLabel jLabel23;
-	private JLabel jLabel24;
-	private JLabel jLabel25;
-	private JLabel jLabel26;
-	private JLabel jLabel27;
-	private JLabel jLabel28;
-	private JLabel jLabel29;
-	// private JLabel jLabel3;
+	private JButton btn_chk_chk;
+	private JButton btn_chk_cInfo;
+	private JButton btn_enrl_cInfo;
+	private JButton btn_ok_sl;
+	private JButton btn_cncl_sl;
+	private JButton btn_chg_prc;
+	private JButton btn_cncl_prc;
+	private JButton btn_odr_odr;
+	private JButton btn_cncl_odr;
+	private JCheckBox chk_mlg_sl;
+	private JCheckBox chk_y_prc;
+	private JCheckBox chk_y_odr;
+	private JComboBox<String> cmb_type_sl;
+	private JComboBox<String> cmb_frm_chk;
+	private JComboBox<String> cmb_to_chk;
+	private JComboBox<String> cmb_type_res;
+	private JComboBox<String> cmb_type_prc;
+	private JComboBox<String> cmb_type_odr;
+	private JComboBox<String> cmb_yy_chk;
+	private JComboBox<String> cmb_mm_chk;
+	private JComboBox<String> cmb_dd_chk;
+	private JLabel lbl_wlcm;
+	private JLabel lbl_gslnL_gInfo;
+	private JLabel brdr_lpgVol_gInfo;
+	private JLabel lbl_lpgL_gInfo;
+	private JLabel brdr_dslVol_gInfo;
+	private JLabel lbl_dslL_gInfo;
+	private JLabel brdr_gslnVol_gInfo;
+	private JLabel lbl_gslnD_gInfo;
+	private JLabel lbl_lpgD_gInfo;
+	private JLabel lbl_dslD_gInfo;
+	private JLabel brdr_gslnPrc_gInfo;
+	private JLabel lbl_date;
+	private JLabel brdr_lpgPrc_gInfo;
+	private JLabel brdr_dslPrc_gInfo;
+	private JLabel lbl_gslnPL_gInfo;
+	private JLabel lbl_lpgPL_gInfo;
+	private JLabel lbl_dslPL_gInfo;
+	private JLabel lbl_mnD_sl;
+	private JLabel brdr_vol_sl;
+	private JLabel brdr_mn_sl;
+	private JLabel lbl_volL_sl;
+	private JLabel lbl_nm_cInfo;
+	// private JLabel lbl_type_gInfo;
 
-	private JLabelComponent jLabel3;
-	private JLabel jLabel30;
-	private JLabel jLabel31;
-	private JLabel jLabel32;
-	private JLabel jLabel33;
-	private JLabel jLabel34;
-	private JLabel jLabel35;
-	private JLabel jLabel36;
-	private JLabel jLabel37;
-	private JLabel jLabel38;
-	private JLabel jLabel39;
-	private JLabel jLabel4;
-	private JLabel jLabel40;
-	private JLabel jLabel41;
-	private JLabel jLabel42;
-	private JLabel jLabel43;
-	private JLabel jLabel44;
-	private JLabel jLabel45;
-	private JLabel jLabel5;
-	private JLabel jLabel6;
-	private JLabel jLabel7;
-	private JLabel jLabel8;
-	private JLabel jLabel9;
-	private JPanel jPanel1;
-	private JPanel jPanel11;
-	private JPanel jPanel2;
-	private JPanel jPanel3;
-	private JPanel jPanel4;
-	private JPanel jPanel5;
-	private JPanel jPanel6;
-	private JPanel jPanel7;
-	private JPanel jPanel8;
-	private JPanel jPanel9;
-	private JRadioButton jRadioButton1;
-	private JRadioButton jRadioButton10;
-	private JRadioButton jRadioButton11;
-	private JRadioButton jRadioButton12;
-	private JRadioButton jRadioButton2;
-	private JRadioButton jRadioButton8;
-	private JRadioButton jRadioButton9;
-	private JTabbedPane jTabbedPane1;
+	private JLabelComponent lbl_type_gInfo;
+	private JLabel lbl_nmbr_cInfo;
+	private JLabel lbl_mlg_cInfo;
+	private JLabel lbl_to_chk;
+	private JLabel lbl_type_res;
+	private JLabel lbl_vol_res;
+	private JLabel lbl_sum_res;
+	private JLabel lbl_sumD_res;
+	private JLabel lbl_volL_res;
+	private JLabel lbl_type_prc;
+	private JLabel lbl_crnt_prc;
+	private JLabel lbl_vol_gInfo;
+	private JLabel lbl_nw_prc;
+	private JLabel lbl_chg_prc;
+	private JLabel lbl_type_odr;
+	private JLabel lbl_crnt_odr;
+	private JLabel lbl_add_odr;
+	private JLabel lbl_chk_odr;
+	private JLabel lbl_prc_gInfo;
+	private JLabel lbl_gsln_gInfo;
+	private JLabel lbl_lpg_gInfo;
+	private JLabel lbl_dsl_gInfo;
+	private JLabel lbl_type_sl;
+	private JPanel pnl_res;
+	private JPanel pnl_odr;
+	private JPanel pnl_chk;
+	private JPanel pnl_prc;
+	private JPanel tab_sl;
+	private JPanel tab_chk;
+	private JPanel tab_prc;
+	private JPanel pnl_gInfo;
+	private JPanel pnl_sl;
+	private JPanel pnl_cInfo;
+	private JRadioButton rd_mn_sl;
+	private JRadioButton rd_mnth_chk;
+	private JRadioButton rd_prd_chk;
+	private JRadioButton rd_frmTo_chk;
+	private JRadioButton rd_vol_sl;
+	private JRadioButton rd_tdy_chk;
+	private JRadioButton rd_date_chk;
+	private JTabbedPane tabbedPane;
 	private JTextField jTextField1;
-	private JTextField jTextField10;
-	private JTextField jTextField11;
-	private JTextField jTextField12;
-	private JTextField jTextField13;
-	private JTextField jTextField2;
-	private JTextField jTextField3;
-	private JTextField jTextField4;
-	private JTextField jTextField5;
-	private JTextField jTextField6;
-	private JTextField jTextField7;
-	private JTextField jTextField8;
-	private JTextField jTextField9;
+	private JTextField txt_crnt_prc;
+	private JTextField txt_nw_prc;
+	private JTextField txt_crnt_odr;
+	private JTextField txt_add_odr;
+	private JTextField txt_nm_cInfo;
+	private JTextField txt_nmbr_cInfo;
+	private JTextField txt_mlg_cInfo;
+	private JTextField txt_to_chk;
+	private JTextField txt_mlg_sl;
+	private JTextField txt_frm_chk;
+	private JTextField txt_vol_res;
+	private JTextField txt_sum_res;
 	// End of variables declaration//GEN-END:variables
 }
