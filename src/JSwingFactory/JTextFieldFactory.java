@@ -1,5 +1,8 @@
 package JSwingFactory;
 
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextField;
 import javax.swing.border.Border;
 
 import JSwingComponent.JSwingComponentProperties;
@@ -19,8 +22,13 @@ public class JTextFieldFactory extends JSwingComponentFactory {
 
 	@Override
 	public JTextFieldComponent textFieldCreate(String text, Integer alignment, Border border, boolean editable) {
+		if(alignment==null){
+			alignment = JTextField.LEADING;
+		}
 		this.componentProperties = new JTextFieldProperties(text, alignment, border, editable);
 		textField = new JTextFieldComponent(this.componentProperties);
 		return textField;
 	}
+	
+	
 }

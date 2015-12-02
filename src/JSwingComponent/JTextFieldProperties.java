@@ -1,5 +1,6 @@
 package JSwingComponent;
 
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
@@ -16,6 +17,7 @@ public class JTextFieldProperties extends JSwingComponentProperties {
 
 	public JTextFieldProperties(String text, int alignment, Border border, boolean editable) {
 		this.text = text;
+
 		this.horizontalAlignment = alignment;
 		this.border = border;
 		this.editable = editable;

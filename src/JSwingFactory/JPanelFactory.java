@@ -19,6 +19,7 @@ public class JPanelFactory extends JSwingComponentFactory {
 
 	@Override
 	public JPanelComponent panelCreate(Border border) {
+		
 		componentProperties = new JPanelProperties(border);
 		this.panel = new JPanelComponent(componentProperties);
 		return this.panel;

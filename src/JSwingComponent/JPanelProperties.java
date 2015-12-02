@@ -11,7 +11,7 @@ public class JPanelProperties extends JSwingComponentProperties {
 	}
 
 	public JPanelProperties(Border border) {
-		border = this.border;
+		this.border = border;
 	}
 
 	@Override

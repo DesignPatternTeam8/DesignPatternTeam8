@@ -1,5 +1,7 @@
 package JSwingComponent;
 
+import java.awt.event.ActionListener;
+
 import javax.swing.JTextField;
 
 public class JTextFieldComponent extends JTextField {
@@ -10,6 +12,7 @@ public class JTextFieldComponent extends JTextField {
 		this.setHorizontalAlignment(componentProperties.getHorizontalAlignment());
 		this.setBorder(componentProperties.getBorder());
 		this.setEditable(componentProperties.getEditable());
+
 	}
 
 }
