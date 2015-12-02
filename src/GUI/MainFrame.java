@@ -24,8 +24,11 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.WindowConstants;
 
 import JSwingComponent.JLabelComponent;
+import JSwingFactory.JButtonFactory;
 import JSwingFactory.JLabelFactory;
+import JSwingFactory.JPanelFactory;
 import JSwingFactory.JSwingComponentFactory;
+import JSwingFactory.JTextFieldFactory;
 
 /**
  *
@@ -52,12 +55,15 @@ public class MainFrame extends JFrame {
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
-		JSwingComponentFactory temp = new JLabelFactory();
+		JSwingComponentFactory labelFactory = new JLabelFactory();
+		JSwingComponentFactory textFieldFactory = new JTextFieldFactory();
+		JSwingComponentFactory panelFactory = new JPanelFactory();
+		JSwingComponentFactory buttonFactory = new JButtonFactory();
 		tabbedPane = new JTabbedPane();
-		tab_sl = new JPanel();
-		pnl_gInfo = new JPanel();
+		tab_sl = panelFactory.panelCreate();
+		pnl_gInfo = panelFactory.panelCreate();
 		// lbl_type_gInfo = new JLabel();
-		lbl_type_gInfo = (JLabelComponent) temp.create("Kind of Gas");
+		lbl_type_gInfo = labelFactory.labelCreate("Kind of Gas");
 		lbl_vol_gInfo = new JLabel();
 		lbl_prc_gInfo = new JLabel();
 		lbl_gsln_gInfo = new JLabel();

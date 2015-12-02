@@ -2,25 +2,38 @@ package JSwingFactory;
 
 import javax.swing.border.Border;
 
+import JSwingComponent.JButtonComponent;
+import JSwingComponent.JLabelComponent;
+import JSwingComponent.JPanelComponent;
+import JSwingComponent.JTextFieldComponent;
+
 public abstract class JSwingComponentFactory {
 
-	public Object create(String text) {
+	public JLabelComponent labelCreate(String text) {
 		return null;
 	}
 
-	public Object labelCreate(String text, Integer alignment, Border border) {
+	public JLabelComponent labelCreate(String text, Integer alignment, Border border) {
 		return null;
 	}
 
-	public Object create() {
+	public JPanelComponent panelCreate() {
 		return null;
 	}
 
-	public Object panelCreate(Border border) {
+	public JPanelComponent panelCreate(Border border) {
 		return null;
 	}
 
-	public Object textFieldCreate(String text, Integer alignment, Border border, boolean editable) {
+	public JButtonComponent buttonCreate(String text) {
+		return null;
+	}
+
+	public JTextFieldComponent textFieldCreate(String text) {
+		return null;
+	}
+
+	public JTextFieldComponent textFieldCreate(String text, Integer alignment, Border border, boolean editable) {
 		return null;
 	}
 }

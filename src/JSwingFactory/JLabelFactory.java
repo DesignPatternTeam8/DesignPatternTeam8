@@ -16,14 +16,14 @@ public class JLabelFactory extends JSwingComponentFactory {
 	}
 
 	@Override
-	public Object create(String text) {
+	public JLabelComponent labelCreate(String text) {
 		this.componentProperties = new JLabelProperties(text);
 		label = new JLabelComponent(this.componentProperties);
 		return label;
 	}
 
 	@Override
-	public Object labelCreate(String text, Integer alignment, Border border) {
+	public JLabelComponent labelCreate(String text, Integer alignment, Border border) {
 		this.componentProperties = new JLabelProperties(text, alignment, border);
 		label = new JLabelComponent(this.componentProperties);
 		return label;

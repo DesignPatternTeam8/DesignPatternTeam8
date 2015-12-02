@@ -9,10 +9,11 @@ public class JButtonFactory extends JSwingComponentFactory {
 	JSwingComponentProperties componentProperties;
 
 	@Override
-	public Object create(String text) {
+	public JButtonComponent buttonCreate(String text) {
 		componentProperties = new JButtonProperties(text);
 		this.button = new JButtonComponent(componentProperties);
 		return this.button;
+
 	}
 
 }
