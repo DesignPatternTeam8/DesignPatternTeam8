@@ -43,3 +43,6 @@ Temporary Items
 .apdisk
 /nbproject/private/
 /build/
+.classpath
+
+src/GUI/MainFrame.java

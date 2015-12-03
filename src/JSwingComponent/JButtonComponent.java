@@ -1,16 +1,11 @@
 package JSwingComponent;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.JButton;
 
-public class JButtonComponent extends JButtonObservable implements ActionListener {
+public class JButtonComponent extends JButton {
 	public JButtonComponent(JSwingComponentProperties componentProperties) {
 
 		this.setText(componentProperties.getText());
 
-	}
-	public void actionPerformed(ActionEvent e) {
-		String command = e.getActionCommand();
-		
 	}
 }
