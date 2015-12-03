@@ -1,6 +1,6 @@
-package GUI;
+package DAO;
 
-public class Member {
+public class MemberVO {
 	private String s_type;	//휘발유 등유 LPG
 	private int s_supply;	//보유량
 	private int s_price;	//리터당 가격
@@ -40,22 +40,26 @@ public class Member {
 	}
 	public int getCustomerID() {
 		return s_id;
-	}public void setMileage(int mileage) {
+	}
+	public void setMileage(int mileage) {
 		this.s_mileage = mileage;
 	}
 	public int getMileage() {
 		return s_mileage;
-	}public void setSalesID(int salesID) {
+	}
+	public void setSalesID(int salesID) {
 		this.s_salesID = salesID;
 	}
 	public int getSalesID() {
 		return s_salesID;
-	}public void setVolume(int volume) {
+	}
+	public void setVolume(int volume) {
 		this.s_volume = volume;
 	}
 	public int getVolume() {
 		return s_volume;
-	}public void setMoney(int money) {
+	}
+	public void setMoney(int money) {
 		this.s_money = money;
 	}
 	public int getMoney() {

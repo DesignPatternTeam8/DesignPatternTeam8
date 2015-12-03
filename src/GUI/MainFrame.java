@@ -6,6 +6,7 @@
 package GUI;
 
 import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.GroupLayout;
 import javax.swing.JCheckBox;
@@ -168,11 +169,13 @@ public class MainFrame extends JFrame {
 		rd_mn_sl = new JRadioButton();
 		rd_vol_sl = new JRadioButton();
 		chk_mlg_sl = new JCheckBox();
-		rd_tdy_chk = new JRadioButton();
-		rd_date_chk = new JRadioButton();
-		rd_mnth_chk = new JRadioButton();
-		rd_prd_chk = new JRadioButton();
-		rd_frmTo_chk = new JRadioButton();
+		//이호일 버튼 묶기 151203
+		ButtonGroup bg_chk = new ButtonGroup();
+		bg_chk.add(rd_date_chk = new JRadioButton());
+		bg_chk.add(rd_mnth_chk = new JRadioButton());
+		bg_chk.add(rd_prd_chk = new JRadioButton());
+		bg_chk.add(rd_frmTo_chk = new JRadioButton());
+		bg_chk.add(rd_tdy_chk = new JRadioButton());
 		cmb_yy_chk = new JComboBox<>();
 		cmb_mm_chk = new JComboBox<>();
 		cmb_dd_chk = new JComboBox<>();
@@ -183,6 +186,8 @@ public class MainFrame extends JFrame {
 		chk_y_prc = new JCheckBox();
 		cmb_type_odr = new JComboBox<>();
 		chk_y_odr = new JCheckBox();
+		db_obs = new DB_Observable();
+		
 	}
 
 	@SuppressWarnings("unchecked")
@@ -497,6 +502,7 @@ public class MainFrame extends JFrame {
 			}
 		});
 
+		
 		GroupLayout jPanel2Layout = new GroupLayout(pnl_chk);
 		pnl_chk.setLayout(jPanel2Layout);
 		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -571,6 +577,15 @@ public class MainFrame extends JFrame {
 				jTextField8ActionPerformed(evt);
 			}
 		});
+		//이호일 수정 151203
+		btn_ok_sl.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				db_obs.action();
+			}
+		});
+		db_obs.addObserver(brdr_lpgVol_gInfo);
+		db_obs.addObserver(brdr_dslVol_gInfo);
+		db_obs.addObserver(brdr_gslnVol_gInfo);
 
 		GroupLayout jPanel1Layout = new GroupLayout(pnl_res);
 		pnl_res.setLayout(jPanel1Layout);
@@ -954,5 +969,6 @@ public class MainFrame extends JFrame {
 	private JTextFieldComponent txt_frm_chk;
 	private JTextFieldComponent txt_vol_res;
 	private JTextFieldComponent txt_sum_res;
+	private DB_Observable db_obs;
 	// End of variables declaration//GEN-END:variables
 }
