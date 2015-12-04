@@ -1,7 +1,5 @@
 package JSwingFactory;
 
-import java.awt.event.ActionListener;
-
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 

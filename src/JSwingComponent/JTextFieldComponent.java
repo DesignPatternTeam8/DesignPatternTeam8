@@ -1,7 +1,5 @@
 package JSwingComponent;
 
-import java.awt.event.ActionListener;
-
 import javax.swing.JTextField;
 
 public class JTextFieldComponent extends JTextField {

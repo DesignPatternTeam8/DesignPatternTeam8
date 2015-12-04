@@ -1,7 +1,5 @@
 package JSwingComponent;
 
-import javax.swing.border.Border;
-
 public class JButtonProperties extends JSwingComponentProperties {
 	private String text = null;
 
