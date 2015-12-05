@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -80,7 +82,10 @@ public class MainFrame extends JFrame {
 	}
 
 	private void setTextFieldComponents() {
-
+		txt_vol_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
+				false);
+		txt_mn_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
+				false);
 		txt_stat_ginfo = textFieldFactory.textFieldCreate(" Enough Gas for all kinds", JTextField.CENTER,
 				BorderFactory.createEtchedBorder(), false);
 		txt_mlg_sl = textFieldFactory.textFieldCreate("00", JTextField.CENTER, BorderFactory.createEtchedBorder(),
@@ -132,8 +137,6 @@ public class MainFrame extends JFrame {
 		brdr_gslnPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		brdr_lpgPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		brdr_dslPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
-		brdr_vol_sl = labelFactory.labelCreate("00", SwingConstants.CENTER, BorderFactory.createEtchedBorder());
-		brdr_mn_sl = labelFactory.labelCreate("00", SwingConstants.CENTER, BorderFactory.createEtchedBorder());
 
 		lbl_type_sl = labelFactory.labelCreate("Kind of Gas");
 		lbl_mnD_sl = labelFactory.labelCreate("$");
@@ -161,7 +164,7 @@ public class MainFrame extends JFrame {
 		lbl_add_odr = labelFactory.labelCreate("How much litter");
 		lbl_chk_odr = labelFactory.labelCreate("Sure to Order?");
 		lbl_wlcm = labelFactory.labelCreate("Welcome to Gas Manger!!");
-		lbl_date = labelFactory.labelCreate("Today is 0000-00-00");
+		lbl_date = labelFactory.labelCreate("Today is " + getCurrentDate());
 	}
 
 	private void setOtherComponents() {
@@ -187,7 +190,43 @@ public class MainFrame extends JFrame {
 		chk_y_prc = new JCheckBox();
 		cmb_type_odr = new JComboBox<>();
 		chk_y_odr = new JCheckBox();
-		//db_obs = new DB_Observable();
+		// db_obs = new DB_Observable();
+
+	}
+
+	private String getCurrentDate() {
+		String currentDate;
+		long tempCurTime = System.currentTimeMillis();
+		SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd");
+		currentDate = timeFormat.format(new Date(tempCurTime));
+		return currentDate;
+	}
+
+	private void setCBItems() {
+
+		String[] gasItems = { "Gas", "Regular", "Premium", "Disel" };
+		String[] yearItem = { "2015", "2016", "2017" };
+		String[] dateItem = new String[31];
+		String[] monthItem = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" };
+		for (int i = 0; i < 31; i++) {
+			dateItem[i] = String.valueOf(i+1);
+		}
+		cmb_type_sl.setModel(new DefaultComboBoxModel<>(gasItems));
+		cmb_yy_chk.setModel(new DefaultComboBoxModel<>(yearItem));
+
+		cmb_mm_chk.setModel(new DefaultComboBoxModel<>(monthItem));
+
+		cmb_dd_chk.setModel(new DefaultComboBoxModel<>(dateItem));
+
+		cmb_frm_chk.setModel(new DefaultComboBoxModel<>(yearItem));
+
+		cmb_to_chk.setModel(new DefaultComboBoxModel<>(monthItem));
+
+		cmb_type_res.setModel(new DefaultComboBoxModel<>(gasItems));
+
+		cmb_type_prc.setModel(new DefaultComboBoxModel<>(gasItems));
+
+		cmb_type_odr.setModel(new DefaultComboBoxModel<>(gasItems));
 
 	}
 
@@ -202,6 +241,7 @@ public class MainFrame extends JFrame {
 		setTextFieldComponents();
 		setLabelComponents();
 		setOtherComponents();
+		setCBItems();
 
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -321,8 +361,6 @@ public class MainFrame extends JFrame {
 																		.addComponent(lbl_dslPL_gInfo)))
 								.addComponent(txt_stat_ginfo)).addGap(0, 45, Short.MAX_VALUE)));
 
-		cmb_type_sl.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
 		rd_mn_sl.setText("By Money");
 		rd_mn_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -363,9 +401,9 @@ public class MainFrame extends JFrame {
 																.addComponent(txt_mlg_sl)
 																.addComponent(cmb_type_sl, 0, GroupLayout.DEFAULT_SIZE,
 																		Short.MAX_VALUE)
-												.addComponent(brdr_mn_sl, GroupLayout.DEFAULT_SIZE,
+												.addComponent(txt_mn_sl, GroupLayout.DEFAULT_SIZE,
 														GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(brdr_vol_sl, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										.addComponent(txt_vol_sl, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 												Short.MAX_VALUE))
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
 										.addComponent(lbl_volL_sl)).addComponent(btn_cncl_sl))
@@ -378,10 +416,10 @@ public class MainFrame extends JFrame {
 						.addGap(18, 18, 18)
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 								.addComponent(rd_mn_sl, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lbl_mnD_sl).addComponent(brdr_mn_sl))
+								.addComponent(lbl_mnD_sl).addComponent(txt_mn_sl))
 						.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(rd_vol_sl).addComponent(brdr_vol_sl).addComponent(lbl_volL_sl))
+								.addComponent(rd_vol_sl).addComponent(txt_vol_sl).addComponent(lbl_volL_sl))
 						.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 								.addComponent(chk_mlg_sl).addComponent(txt_mlg_sl, GroupLayout.PREFERRED_SIZE,
@@ -481,16 +519,6 @@ public class MainFrame extends JFrame {
 			}
 		});
 
-		cmb_yy_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-		cmb_mm_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-		cmb_dd_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-		cmb_frm_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-		cmb_to_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
 		txt_frm_chk.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jTextField7ActionPerformed(evt);
@@ -570,24 +598,19 @@ public class MainFrame extends JFrame {
 						jPanel2Layout.createSequentialGroup().addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(btn_chk_chk).addContainerGap()));
 
-		cmb_type_res.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
 		txt_vol_res.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jTextField8ActionPerformed(evt);
 			}
 		});
 		// 이호일 수정 151203
-	/*
-		btn_ok_sl.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				db_obs.action();
-			}
-		});
-		db_obs.addObserver(brdr_lpgVol_gInfo);
-		db_obs.addObserver(brdr_dslVol_gInfo);
-		db_obs.addObserver(brdr_gslnVol_gInfo);
-*/
+		/*
+		 * btn_ok_sl.addActionListener(new java.awt.event.ActionListener() {
+		 * public void actionPerformed(java.awt.event.ActionEvent evt) {
+		 * db_obs.action(); } }); db_obs.addObserver(brdr_lpgVol_gInfo);
+		 * db_obs.addObserver(brdr_dslVol_gInfo);
+		 * db_obs.addObserver(brdr_gslnVol_gInfo);
+		 */
 		GroupLayout jPanel1Layout = new GroupLayout(pnl_res);
 		pnl_res.setLayout(jPanel1Layout);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -644,8 +667,6 @@ public class MainFrame extends JFrame {
 
 		tabbedPane.addTab("Check", tab_chk);
 
-		cmb_type_prc.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
 		chk_y_prc.setText("YES");
 
 		GroupLayout jPanel3Layout = new GroupLayout(pnl_prc);
@@ -691,8 +712,6 @@ public class MainFrame extends JFrame {
 						.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 								.addComponent(btn_chg_prc).addComponent(btn_cncl_prc))
 						.addContainerGap()));
-
-		cmb_type_odr.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
 		chk_y_odr.setText("YES");
 
@@ -910,8 +929,6 @@ public class MainFrame extends JFrame {
 	private JLabelComponent lbl_lpgPL_gInfo;
 	private JLabelComponent lbl_dslPL_gInfo;
 	private JLabelComponent lbl_mnD_sl;
-	private JLabelComponent brdr_vol_sl;
-	private JLabelComponent brdr_mn_sl;
 	private JLabelComponent lbl_volL_sl;
 	private JLabelComponent lbl_nm_cInfo;
 	// private JLabelComponent lbl_type_gInfo;
@@ -959,6 +976,8 @@ public class MainFrame extends JFrame {
 	private JTabbedPane tabbedPane;
 	private JTextFieldComponent txt_stat_ginfo;
 	private JTextFieldComponent txt_crnt_prc;
+	private JTextFieldComponent txt_vol_sl;
+	private JTextFieldComponent txt_mn_sl;
 	private JTextFieldComponent txt_nw_prc;
 	private JTextFieldComponent txt_crnt_odr;
 	private JTextFieldComponent txt_add_odr;
@@ -970,6 +989,6 @@ public class MainFrame extends JFrame {
 	private JTextFieldComponent txt_frm_chk;
 	private JTextFieldComponent txt_vol_res;
 	private JTextFieldComponent txt_sum_res;
-	//private DB_Observable db_obs;
+	// private DB_Observable db_obs;
 	// End of variables declaration//GEN-END:variables
 }
