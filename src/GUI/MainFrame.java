@@ -13,6 +13,7 @@ import javax.swing.GroupLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
@@ -22,6 +23,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.WindowConstants;
 
+import DAO.getData;
 import JSwingComponent.JButtonComponent;
 import JSwingComponent.JLabelComponent;
 import JSwingComponent.JPanelComponent;
@@ -40,8 +42,9 @@ public class MainFrame extends JFrame {
 
 	/**
 	 * Creates new form MainFrame
+	 * @throws Exception 
 	 */
-	public MainFrame() {
+	public MainFrame() throws Exception {
 		initComponents();
 
 	}
@@ -85,9 +88,9 @@ public class MainFrame extends JFrame {
 				BorderFactory.createEtchedBorder(), false);
 		txt_mlg_sl = textFieldFactory.textFieldCreate("00", JTextField.CENTER, BorderFactory.createEtchedBorder(),
 				true);
-		txt_nm_cInfo = textFieldFactory.textFieldCreate("txt_nm_cInfo", null, BorderFactory.createEtchedBorder(),
+		txt_nm_cInfo = textFieldFactory.textFieldCreate("hoil", null, BorderFactory.createEtchedBorder(),
 				false);
-		txt_nmbr_cInfo = textFieldFactory.textFieldCreate("txt_nmbr_cInfo", null, BorderFactory.createEtchedBorder(),
+		txt_nmbr_cInfo = textFieldFactory.textFieldCreate("12340001", null, BorderFactory.createEtchedBorder(),
 				false);
 		txt_mlg_cInfo = textFieldFactory.textFieldCreate("txt_mlg_cInfo", null, BorderFactory.createEtchedBorder(),
 				false);
@@ -97,13 +100,13 @@ public class MainFrame extends JFrame {
 				false);
 
 		txt_vol_res = textFieldFactory.textFieldCreate("txt_vol_res", null, BorderFactory.createEtchedBorder(), false);
-		txt_sum_res = textFieldFactory.textFieldCreate("txt_vol_res", null, BorderFactory.createEtchedBorder(), false);
+		txt_sum_res = textFieldFactory.textFieldCreate("txt_vol_res", null, BorderFactory.createEtchedBorder(), false); 
 		txt_crnt_prc = textFieldFactory.textFieldCreate("txt_crnt_prc", null, BorderFactory.createEtchedBorder(),
 				false);
-		txt_nw_prc = textFieldFactory.textFieldCreate("txt_crnt_prc", null, BorderFactory.createEtchedBorder(), false);
+		txt_nw_prc = textFieldFactory.textFieldCreate("txt_crnt_prc", null, BorderFactory.createEtchedBorder(), true);
 		txt_crnt_odr = textFieldFactory.textFieldCreate("txt_crnt_prc", null, BorderFactory.createEtchedBorder(),
 				false);
-		txt_add_odr = textFieldFactory.textFieldCreate("txt_crnt_prc", null, BorderFactory.createEtchedBorder(), false);
+		txt_add_odr = textFieldFactory.textFieldCreate("txt_crnt_prc", null, BorderFactory.createEtchedBorder(), true);
 	}
 
 	private void setLabelComponents() {
@@ -167,8 +170,10 @@ public class MainFrame extends JFrame {
 	private void setOtherComponents() {
 		tabbedPane = new JTabbedPane();
 		cmb_type_sl = new JComboBox<>();
-		rd_mn_sl = new JRadioButton();
-		rd_vol_sl = new JRadioButton();
+		//버튼 묶기 151204
+		ButtonGroup bg_sl = new ButtonGroup();
+		bg_sl.add(rd_mn_sl = new JRadioButton());
+		bg_sl.add(rd_vol_sl = new JRadioButton());
 		chk_mlg_sl = new JCheckBox();
 		// 이호일 버튼 묶기 151203
 		ButtonGroup bg_chk = new ButtonGroup();
@@ -196,7 +201,7 @@ public class MainFrame extends JFrame {
 
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// Code">//GEN-BEGIN:initComponents
-	private void initComponents() {
+	private void initComponents() throws Exception {
 		setButtonComponents();
 		setPanelComponents();
 		setTextFieldComponents();
@@ -320,9 +325,55 @@ public class MainFrame extends JFrame {
 																		.addComponent(brdr_dslPrc_gInfo)
 																		.addComponent(lbl_dslPL_gInfo)))
 								.addComponent(txt_stat_ginfo)).addGap(0, 45, Short.MAX_VALUE)));
+		//이호일 수정 151204
+		getData gData = new getData();
+		for(int i=0;i < gData.setType().size();i++) {
+			cmb_type_sl.addItem(gData.setType().get(i).toString());
+			cmb_type_res.addItem(gData.setType().get(i).toString());
+			cmb_type_prc.addItem(gData.setType().get(i).toString());
+			cmb_type_odr.addItem(gData.setType().get(i).toString());
+		}
+		cmb_type_prc.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				txt_crnt_prc.setText(String.valueOf(
+						gData.getGasPrice(cmb_type_prc.getSelectedItem().toString())));
 
-		cmb_type_sl.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+			}
+		});
+		
+		cmb_type_odr.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				txt_crnt_odr.setText(String.valueOf(
+						gData.getGasVolume(cmb_type_odr.getSelectedItem().toString())));	
+			}
+		});
+		
+		btn_chg_prc.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				if(chk_y_prc.isSelected()){
+					gData.setGasPrice(cmb_type_prc.getSelectedItem().toString(),Integer.valueOf(txt_nw_prc.getText()));
+					txt_crnt_prc.setText(String.valueOf(
+						gData.getGasPrice(cmb_type_prc.getSelectedItem().toString())));
+				}
+				else
+					JOptionPane.showMessageDialog(null, "Please check \"Sure to change\".");
 
+			}
+		});
+		
+		btn_odr_odr.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				if(chk_y_odr.isSelected()){
+					gData.setGasVolume(cmb_type_odr.getSelectedItem().toString(),Integer.valueOf(txt_add_odr.getText()));
+					txt_crnt_odr.setText(String.valueOf(
+						gData.getGasVolume(cmb_type_odr.getSelectedItem().toString())));
+				}
+				else
+					JOptionPane.showMessageDialog(null, "Please check \"Sure to order\".");
+
+			}
+		});
+		
 		rd_mn_sl.setText("By Money");
 		rd_mn_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,7 +383,12 @@ public class MainFrame extends JFrame {
 		});
 
 		rd_vol_sl.setText("By Volume");
+		rd_vol_sl.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jRadioButton1ActionPerformed(evt);
 
+			}
+		});
 		chk_mlg_sl.setText("Use Mileage");
 
 		GroupLayout jPanel8Layout = new GroupLayout(pnl_sl);
@@ -390,11 +446,7 @@ public class MainFrame extends JFrame {
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 								.addComponent(btn_ok_sl).addComponent(btn_cncl_sl))));
 
-		btn_chk_cInfo.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton2ActionPerformed(evt);
-			}
-		});
+		
 
 		GroupLayout jPanel9Layout = new GroupLayout(pnl_cInfo);
 		pnl_cInfo.setLayout(jPanel9Layout);
@@ -570,24 +622,53 @@ public class MainFrame extends JFrame {
 						jPanel2Layout.createSequentialGroup().addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(btn_chk_chk).addContainerGap()));
 
-		cmb_type_res.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
 		txt_vol_res.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jTextField8ActionPerformed(evt);
 			}
 		});
+<<<<<<< Updated upstream
 		// 이호일 수정 151203
 	/*
+=======
+		////////////////////////////////////이호일 수정 151203
+>>>>>>> Stashed changes
 		btn_ok_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				db_obs.action();
+				gData.insertSales(Integer.valueOf(txt_nmbr_cInfo.getText()), 
+						cmb_type_sl.getSelectedItem().toString(), Integer.valueOf(brdr_vol_sl.toString()),
+						Integer.valueOf(brdr_mn_sl.toString()), Integer.valueOf(txt_mlg_sl.toString()));
 			}
 		});
+<<<<<<< Updated upstream
 		db_obs.addObserver(brdr_lpgVol_gInfo);
 		db_obs.addObserver(brdr_dslVol_gInfo);
 		db_obs.addObserver(brdr_gslnVol_gInfo);
 */
+=======
+		btn_enrl_cInfo.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				gData.insertCInfo(txt_nm_cInfo.getText().toString(),Integer.valueOf(txt_nmbr_cInfo.getText()));
+			}
+		});
+		
+		btn_chk_cInfo.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				txt_mlg_cInfo.setText(String.valueOf(gData.checkCInfo(txt_nm_cInfo.getText().toString(),
+						Integer.valueOf(txt_nmbr_cInfo.getText()))));
+				
+			}
+		});
+		
+		brdr_lpgVol_gInfo.setText(String.valueOf(gData.getGasVolume("lpg")));
+		brdr_lpgPrc_gInfo.setText(String.valueOf(gData.getGasPrice("lpg")));
+		brdr_dslVol_gInfo.setText(String.valueOf(gData.getGasVolume("diesel")));
+		brdr_dslPrc_gInfo.setText(String.valueOf(gData.getGasPrice("diesel")));
+		brdr_gslnVol_gInfo.setText(String.valueOf(gData.getGasVolume("gasoline")));
+		brdr_gslnPrc_gInfo.setText(String.valueOf(gData.getGasPrice("gasoline")));
+		
+>>>>>>> Stashed changes
 		GroupLayout jPanel1Layout = new GroupLayout(pnl_res);
 		pnl_res.setLayout(jPanel1Layout);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -644,8 +725,6 @@ public class MainFrame extends JFrame {
 
 		tabbedPane.addTab("Check", tab_chk);
 
-		cmb_type_prc.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
 		chk_y_prc.setText("YES");
 
 		GroupLayout jPanel3Layout = new GroupLayout(pnl_prc);
@@ -691,8 +770,6 @@ public class MainFrame extends JFrame {
 						.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 								.addComponent(btn_chg_prc).addComponent(btn_cncl_prc))
 						.addContainerGap()));
-
-		cmb_type_odr.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
 		chk_y_odr.setText("YES");
 
@@ -860,7 +937,12 @@ public class MainFrame extends JFrame {
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				new MainFrame().setVisible(true);
+				try {
+					new MainFrame().setVisible(true);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 	}
