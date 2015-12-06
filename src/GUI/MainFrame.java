@@ -49,7 +49,7 @@ public class MainFrame extends JFrame {
 	 */
 	public MainFrame() throws Exception {
 		initComponents();
-
+		saleThread.start();
 	}
 
 	/**
@@ -74,6 +74,7 @@ public class MainFrame extends JFrame {
 	}
 
 	private void setButtonComponents() {
+
 		btn_ok_sl = buttonFactory.buttonCreate("OK");
 		btn_cncl_sl = buttonFactory.buttonCreate("Cancel");
 		btn_chk_cInfo = buttonFactory.buttonCreate("Check");
@@ -86,13 +87,13 @@ public class MainFrame extends JFrame {
 	}
 
 	private void setTextFieldComponents() {
-		txt_vol_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
+		txt_vol_sl = textFieldFactory.textFieldCreate(null, JTextField.CENTER, BorderFactory.createEtchedBorder(),
 				false);
-		txt_mn_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
+		txt_mn_sl = textFieldFactory.textFieldCreate(null, JTextField.CENTER, BorderFactory.createEtchedBorder(),
 				false);
 		txt_stat_ginfo = textFieldFactory.textFieldCreate(" Enough Gas for all kinds", JTextField.CENTER,
 				BorderFactory.createEtchedBorder(), false);
-		txt_mlg_sl = textFieldFactory.textFieldCreate("00", JTextField.CENTER, BorderFactory.createEtchedBorder(),
+		txt_mlg_sl = textFieldFactory.textFieldCreate(null, JTextField.CENTER, BorderFactory.createEtchedBorder(),
 				true);
 		txt_nm_cInfo = textFieldFactory.textFieldCreate("hoil", null, BorderFactory.createEtchedBorder(), false);
 		txt_nmbr_cInfo = textFieldFactory.textFieldCreate("12340001", null, BorderFactory.createEtchedBorder(), false);
@@ -103,7 +104,7 @@ public class MainFrame extends JFrame {
 				false);
 
 		txt_vol_res = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), false);
-		txt_sum_res = textFieldFactory.textFieldCreate("test", null, BorderFactory.createEtchedBorder(), false);
+		txt_sum_res = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), false);
 		txt_crnt_prc = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), false);
 		txt_nw_prc = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), true);
 		txt_crnt_odr = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), false);
@@ -137,9 +138,9 @@ public class MainFrame extends JFrame {
 		brdr_lpgPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		brdr_dslPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		txt_vol_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
-	            false);
-	      txt_mn_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
-	            false);
+				false);
+		txt_mn_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
+				false);
 
 		lbl_type_sl = labelFactory.labelCreate("Kind of Gas");
 		lbl_mnD_sl = labelFactory.labelCreate("$");
@@ -205,6 +206,17 @@ public class MainFrame extends JFrame {
 		SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd");
 		currentDate = timeFormat.format(new Date(tempCurTime));
 		return currentDate;
+	}
+
+	private void convertSaleValue() {
+		if (rd_mn_sl.isSelected()) {
+			txt_mn_sl.setEditable(true);
+			txt_vol_sl.setEditable(false);
+		}
+		if (rd_vol_sl.isSelected()) {
+			txt_mn_sl.setEditable(false);
+			txt_vol_sl.setEditable(true);
+		}
 	}
 
 	private void setCBItems() {
@@ -406,8 +418,9 @@ public class MainFrame extends JFrame {
 		rd_mn_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jRadioButton1ActionPerformed(evt);
-				txt_mn_sl.setEditable(true);
-
+				// txt_mn_sl.setEditable(true);
+				// txt_vol_sl.setEditable(false);
+				convertSaleValue();
 			}
 		});
 
@@ -415,8 +428,9 @@ public class MainFrame extends JFrame {
 		rd_vol_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jRadioButton1ActionPerformed(evt);
-				txt_vol_sl.setEditable(true);
-
+				convertSaleValue();
+				// txt_vol_sl.setEditable(true);
+				// txt_mn_sl.setEditable(false);
 			}
 		});
 		chk_mlg_sl.setText("Use Mileage");
@@ -650,22 +664,23 @@ public class MainFrame extends JFrame {
 
 		btn_ok_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				if(rd_mn_sl.isSelected()) {
+				if (rd_mn_sl.isSelected()) {
 					int volume;
-				gData.insertSalesMN(Integer.valueOf(txt_nmbr_cInfo.getText()), 
-						cmb_type_sl.getSelectedItem().toString(), 
-						volume = (Integer.valueOf(txt_mn_sl.getText())/gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())),
-						Integer.valueOf(txt_mn_sl.getText()), 
-						Integer.valueOf(txt_mlg_sl.getText()));
-				gData.setGasVolume(cmb_type_sl.getSelectedItem().toString(), -volume);
-				}
-				else if(rd_vol_sl.isSelected()) {
-					gData.insertSalesVOL(Integer.valueOf(txt_nmbr_cInfo.getText()), 
+					gData.insertSalesMN(Integer.valueOf(txt_nmbr_cInfo.getText()),
+							cmb_type_sl.getSelectedItem().toString(),
+							volume = (Integer.valueOf(txt_mn_sl.getText())
+									/ gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())),
+							Integer.valueOf(txt_mn_sl.getText()), Integer.valueOf(txt_mlg_sl.getText()));
+					gData.setGasVolume(cmb_type_sl.getSelectedItem().toString(), -volume);
+				} else if (rd_vol_sl.isSelected()) {
+					gData.insertSalesVOL(Integer.valueOf(txt_nmbr_cInfo.getText()),
 							cmb_type_sl.getSelectedItem().toString(), Integer.valueOf(txt_vol_sl.getText()),
-							(Integer.valueOf(txt_vol_sl.getText())*gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())), Integer.valueOf(txt_mlg_sl.getText()));
-					gData.setGasVolume(cmb_type_sl.getSelectedItem().toString(), -Integer.valueOf(txt_vol_sl.getText()));
-				}
-				else
+							(Integer.valueOf(txt_vol_sl.getText())
+									* gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())),
+							Integer.valueOf(txt_mlg_sl.getText()));
+					gData.setGasVolume(cmb_type_sl.getSelectedItem().toString(),
+							-Integer.valueOf(txt_vol_sl.getText()));
+				} else
 					System.out.println("error");
 			}
 		});
@@ -708,15 +723,15 @@ public class MainFrame extends JFrame {
 			}
 		});
 
-		//////수정중 
+		////// 수정중
 		btn_chk_chk.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				txt_mlg_cInfo.setText(String.valueOf(gData.checkCInfo(txt_nm_cInfo.getText().toString(),
 						Integer.valueOf(txt_nmbr_cInfo.getText()))));
-				
+
 			}
 		});
-	
+
 		brdr_lpgVol_gInfo.setText(String.valueOf(gData.getGasVolume("lpg")));
 		brdr_lpgPrc_gInfo.setText(String.valueOf(gData.getGasPrice("lpg")));
 		brdr_dslVol_gInfo.setText(String.valueOf(gData.getGasVolume("diesel")));
@@ -971,6 +986,7 @@ public class MainFrame extends JFrame {
 					break;
 				}
 			}
+
 		} catch (ClassNotFoundException ex) {
 			java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (InstantiationException ex) {
@@ -986,6 +1002,7 @@ public class MainFrame extends JFrame {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+
 					new MainFrame().setVisible(true);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -1102,4 +1119,61 @@ public class MainFrame extends JFrame {
 	private JTextFieldComponent txt_sum_res;
 	// private DB_Observable db_obs;
 	// End of variables declaration//GEN-END:variables
+	SaleThread saleThread = new SaleThread();
+
+	class SaleThread extends Thread {
+
+		public void setState() {
+			String defaultText = " Enough Gas for all kinds";
+			String overMlgText = " Using Over Mileage";
+			String needOrderText = "Need to Order for";
+
+			/*
+			 * chk_mlg_sl btn_ok_sl txt_mlg_sl
+			 */
+
+		}
+
+		public void run() {
+
+			while (true) {
+
+				String kind = (String) cmb_type_sl.getSelectedItem();
+				int rPrice = Integer.parseInt(brdr_gslnPrc_gInfo.getText());
+				int pPrice = Integer.parseInt(brdr_lpgPrc_gInfo.getText());
+				int dPrice = Integer.parseInt(brdr_dslPrc_gInfo.getText());
+				int price;
+				if (kind.equals("diesel")) {
+					price = dPrice;
+				} else if (kind.equals("regular")) {
+					price = rPrice;
+				} else {
+					price = pPrice;
+				}
+				int money;
+				int vol = 0;
+				String tempText;
+				try {
+					if (rd_mn_sl.isSelected()) {
+						if (txt_mn_sl.getText() != null && !txt_mn_sl.getText().equals("")) {
+							money = Integer.parseInt(txt_mn_sl.getText());
+							tempText = String.valueOf((float) money / price);
+							txt_vol_sl.setText(tempText);
+						}
+
+					} else if (rd_vol_sl.isSelected()) {
+						if (txt_vol_sl.getText() != null && !txt_vol_sl.getText().equals(""))
+							vol = Integer.parseInt(txt_vol_sl.getText());
+						tempText = String.valueOf((float) vol * price);
+						txt_mn_sl.setText(tempText);
+					}
+				} catch (java.lang.NumberFormatException e) {
+
+				} catch (java.lang.NullPointerException ex) {
+
+				}
+
+			}
+		}
+	}
 }
