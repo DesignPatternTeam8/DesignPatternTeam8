@@ -40,7 +40,7 @@ public class getData {
 	
 	//sales화면 ok버튼
 	public void insertSalesMN(int CustomerID, String type, int volume, int money, int mieleage) {
-
+	}
 	// sales화면 ok버튼
 	public void insertSales(int CustomerID, String type, int volume, int money, int mieleage) {
 

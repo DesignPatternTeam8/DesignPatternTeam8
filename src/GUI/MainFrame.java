@@ -136,14 +136,11 @@ public class MainFrame extends JFrame {
 		brdr_gslnPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		brdr_lpgPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		brdr_dslPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
-<<<<<<< HEAD
 		txt_vol_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
 	            false);
 	      txt_mn_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
 	            false);
-=======
 
->>>>>>> origin/master
 		lbl_type_sl = labelFactory.labelCreate("Kind of Gas");
 		lbl_mnD_sl = labelFactory.labelCreate("$");
 
@@ -650,7 +647,7 @@ public class MainFrame extends JFrame {
 		});
 
 		// 이호일 수정 151203
-<<<<<<< HEAD
+
 		btn_ok_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				if(rd_mn_sl.isSelected()) {
@@ -672,7 +669,6 @@ public class MainFrame extends JFrame {
 					System.out.println("error");
 			}
 		});
-=======
 
 		/*
 		 * btn_ok_sl.addActionListener(new java.awt.event.ActionListener() {
@@ -697,7 +693,6 @@ public class MainFrame extends JFrame {
 		 * db_obs.addObserver(brdr_dslVol_gInfo);
 		 * db_obs.addObserver(brdr_gslnVol_gInfo);
 		 */
->>>>>>> origin/master
 
 		btn_enrl_cInfo.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -712,7 +707,7 @@ public class MainFrame extends JFrame {
 
 			}
 		});
-<<<<<<< HEAD
+
 		//////수정중 
 		btn_chk_chk.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -721,21 +716,14 @@ public class MainFrame extends JFrame {
 				
 			}
 		});
-		
-=======
-
->>>>>>> origin/master
+	
 		brdr_lpgVol_gInfo.setText(String.valueOf(gData.getGasVolume("lpg")));
 		brdr_lpgPrc_gInfo.setText(String.valueOf(gData.getGasPrice("lpg")));
 		brdr_dslVol_gInfo.setText(String.valueOf(gData.getGasVolume("diesel")));
 		brdr_dslPrc_gInfo.setText(String.valueOf(gData.getGasPrice("diesel")));
 		brdr_gslnVol_gInfo.setText(String.valueOf(gData.getGasVolume("gasoline")));
 		brdr_gslnPrc_gInfo.setText(String.valueOf(gData.getGasPrice("gasoline")));
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> origin/master
 		GroupLayout jPanel1Layout = new GroupLayout(pnl_res);
 		pnl_res.setLayout(jPanel1Layout);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -1101,8 +1089,6 @@ public class MainFrame extends JFrame {
 	private JTextFieldComponent txt_mn_sl;
 	private JTextFieldComponent txt_stat_ginfo;
 	private JTextFieldComponent txt_crnt_prc;
-	private JTextFieldComponent txt_vol_sl;
-	private JTextFieldComponent txt_mn_sl;
 	private JTextFieldComponent txt_nw_prc;
 	private JTextFieldComponent txt_crnt_odr;
 	private JTextFieldComponent txt_add_odr;
