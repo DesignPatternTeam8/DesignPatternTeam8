@@ -40,6 +40,17 @@ public class getData {
 	
 	//sales화면 ok버튼
 	public void insertSalesMN(int CustomerID, String type, int volume, int money, int mieleage) {
+		try {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+			String sql = "insert into sales values(" + CustomerID + "," + "\'" + type + "\'" + "," + volume + ","
+					+ money + "," + (int) (money * 0.1 - mieleage) + ","
+					+ dateFormat.format(new Date(System.currentTimeMillis())) + ")";
+			stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 	}
 	// sales화면 ok버튼
 	public void insertSales(int CustomerID, String type, int volume, int money, int mieleage) {
@@ -152,12 +163,12 @@ public class getData {
 	}
 	
 	//총판매량 확인
-	public int checkResultVOL(String type, SimpleDateFormat startDate, SimpleDateFormat endDate) {
+	public int checkResultVOL(String type, String startDate, String endDate) {
 		int volume=0;
 		try {
 			String sql="select volume from sales where type ="+"\'"+type+"\'"+"and date between \'"+startDate+"\' and \'"+endDate+"\'";
 			ResultSet rs = stmt.executeQuery(sql);
-			if(rs.next())
+			while(rs.next())
 					volume+= rs.getInt(1);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -166,12 +177,12 @@ public class getData {
 		return volume;
 	}
 	//총판매금액 확인
-	public int checkResultMN(String type, SimpleDateFormat startDate, SimpleDateFormat endDate) {
+	public int checkResultMN(String type, String startDate, String endDate) {
 		int money=0;
 		try {
 			 String sql="select money from sales where type ="+"\'"+type+"\'"+"and date between \'"+startDate+"\' and \'"+endDate+"\'";
 			ResultSet rs = stmt.executeQuery(sql);
-			if(rs.next())
+			while(rs.next())
 				money+= rs.getInt(1);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
