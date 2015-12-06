@@ -135,9 +135,10 @@ public class MainFrame extends JFrame {
 		brdr_gslnPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		brdr_lpgPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		brdr_dslPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
-		brdr_vol_sl = labelFactory.labelCreate("00", SwingConstants.CENTER, BorderFactory.createEtchedBorder());
-		brdr_mn_sl = labelFactory.labelCreate("00", SwingConstants.CENTER, BorderFactory.createEtchedBorder());
-
+		txt_vol_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
+	            false);
+	      txt_mn_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
+	            false);
 		lbl_type_sl = labelFactory.labelCreate("Kind of Gas");
 		lbl_mnD_sl = labelFactory.labelCreate("$");
 
@@ -378,6 +379,7 @@ public class MainFrame extends JFrame {
 		rd_mn_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jRadioButton1ActionPerformed(evt);
+				txt_mn_sl.setEditable(true);
 
 			}
 		});
@@ -386,6 +388,7 @@ public class MainFrame extends JFrame {
 		rd_vol_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jRadioButton1ActionPerformed(evt);
+				txt_vol_sl.setEditable(true);
 
 			}
 		});
@@ -419,9 +422,9 @@ public class MainFrame extends JFrame {
 																.addComponent(txt_mlg_sl)
 																.addComponent(cmb_type_sl, 0, GroupLayout.DEFAULT_SIZE,
 																		Short.MAX_VALUE)
-												.addComponent(brdr_mn_sl, GroupLayout.DEFAULT_SIZE,
+												.addComponent(txt_mn_sl, GroupLayout.DEFAULT_SIZE,
 														GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(brdr_vol_sl, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										.addComponent(txt_vol_sl, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 												Short.MAX_VALUE))
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
 										.addComponent(lbl_volL_sl)).addComponent(btn_cncl_sl))
@@ -434,10 +437,10 @@ public class MainFrame extends JFrame {
 						.addGap(18, 18, 18)
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 								.addComponent(rd_mn_sl, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lbl_mnD_sl).addComponent(brdr_mn_sl))
+								.addComponent(lbl_mnD_sl).addComponent(txt_mn_sl))
 						.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-								.addComponent(rd_vol_sl).addComponent(brdr_vol_sl).addComponent(lbl_volL_sl))
+								.addComponent(rd_vol_sl).addComponent(txt_vol_sl).addComponent(lbl_volL_sl))
 						.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 								.addComponent(chk_mlg_sl).addComponent(txt_mlg_sl, GroupLayout.PREFERRED_SIZE,
@@ -628,25 +631,30 @@ public class MainFrame extends JFrame {
 				jTextField8ActionPerformed(evt);
 			}
 		});
-<<<<<<< Updated upstream
+
 		// 이호일 수정 151203
-	/*
-=======
-		////////////////////////////////////이호일 수정 151203
->>>>>>> Stashed changes
 		btn_ok_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				gData.insertSales(Integer.valueOf(txt_nmbr_cInfo.getText()), 
-						cmb_type_sl.getSelectedItem().toString(), Integer.valueOf(brdr_vol_sl.toString()),
-						Integer.valueOf(brdr_mn_sl.toString()), Integer.valueOf(txt_mlg_sl.toString()));
+				if(rd_mn_sl.isSelected()) {
+					int volume;
+				gData.insertSalesMN(Integer.valueOf(txt_nmbr_cInfo.getText()), 
+						cmb_type_sl.getSelectedItem().toString(), 
+						volume = (Integer.valueOf(txt_mn_sl.getText())/gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())),
+						Integer.valueOf(txt_mn_sl.getText()), 
+						Integer.valueOf(txt_mlg_sl.getText()));
+				gData.setGasVolume(cmb_type_sl.getSelectedItem().toString(), -volume);
+				}
+				else if(rd_vol_sl.isSelected()) {
+					gData.insertSalesVOL(Integer.valueOf(txt_nmbr_cInfo.getText()), 
+							cmb_type_sl.getSelectedItem().toString(), Integer.valueOf(txt_vol_sl.getText()),
+							(Integer.valueOf(txt_vol_sl.getText())*gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())), Integer.valueOf(txt_mlg_sl.getText()));
+					gData.setGasVolume(cmb_type_sl.getSelectedItem().toString(), -Integer.valueOf(txt_vol_sl.getText()));
+				}
+				else
+					System.out.println("error");
 			}
 		});
-<<<<<<< Updated upstream
-		db_obs.addObserver(brdr_lpgVol_gInfo);
-		db_obs.addObserver(brdr_dslVol_gInfo);
-		db_obs.addObserver(brdr_gslnVol_gInfo);
-*/
-=======
+
 		btn_enrl_cInfo.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				gData.insertCInfo(txt_nm_cInfo.getText().toString(),Integer.valueOf(txt_nmbr_cInfo.getText()));
@@ -660,6 +668,14 @@ public class MainFrame extends JFrame {
 				
 			}
 		});
+		//////수정중 
+		btn_chk_chk.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				txt_mlg_cInfo.setText(String.valueOf(gData.checkCInfo(txt_nm_cInfo.getText().toString(),
+						Integer.valueOf(txt_nmbr_cInfo.getText()))));
+				
+			}
+		});
 		
 		brdr_lpgVol_gInfo.setText(String.valueOf(gData.getGasVolume("lpg")));
 		brdr_lpgPrc_gInfo.setText(String.valueOf(gData.getGasPrice("lpg")));
@@ -667,8 +683,7 @@ public class MainFrame extends JFrame {
 		brdr_dslPrc_gInfo.setText(String.valueOf(gData.getGasPrice("diesel")));
 		brdr_gslnVol_gInfo.setText(String.valueOf(gData.getGasVolume("gasoline")));
 		brdr_gslnPrc_gInfo.setText(String.valueOf(gData.getGasPrice("gasoline")));
-		
->>>>>>> Stashed changes
+	
 		GroupLayout jPanel1Layout = new GroupLayout(pnl_res);
 		pnl_res.setLayout(jPanel1Layout);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -992,8 +1007,6 @@ public class MainFrame extends JFrame {
 	private JLabelComponent lbl_lpgPL_gInfo;
 	private JLabelComponent lbl_dslPL_gInfo;
 	private JLabelComponent lbl_mnD_sl;
-	private JLabelComponent brdr_vol_sl;
-	private JLabelComponent brdr_mn_sl;
 	private JLabelComponent lbl_volL_sl;
 	private JLabelComponent lbl_nm_cInfo;
 	// private JLabelComponent lbl_type_gInfo;
@@ -1039,6 +1052,8 @@ public class MainFrame extends JFrame {
 	private JRadioButton rd_tdy_chk;
 	private JRadioButton rd_date_chk;
 	private JTabbedPane tabbedPane;
+	private JTextFieldComponent txt_vol_sl;
+	private JTextFieldComponent txt_mn_sl;
 	private JTextFieldComponent txt_stat_ginfo;
 	private JTextFieldComponent txt_crnt_prc;
 	private JTextFieldComponent txt_nw_prc;
