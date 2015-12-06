@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -42,7 +44,8 @@ public class MainFrame extends JFrame {
 
 	/**
 	 * Creates new form MainFrame
-	 * @throws Exception 
+	 * 
+	 * @throws Exception
 	 */
 	public MainFrame() throws Exception {
 		initComponents();
@@ -83,30 +86,28 @@ public class MainFrame extends JFrame {
 	}
 
 	private void setTextFieldComponents() {
-
+		txt_vol_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
+				false);
+		txt_mn_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
+				false);
 		txt_stat_ginfo = textFieldFactory.textFieldCreate(" Enough Gas for all kinds", JTextField.CENTER,
 				BorderFactory.createEtchedBorder(), false);
 		txt_mlg_sl = textFieldFactory.textFieldCreate("00", JTextField.CENTER, BorderFactory.createEtchedBorder(),
 				true);
-		txt_nm_cInfo = textFieldFactory.textFieldCreate("hoil", null, BorderFactory.createEtchedBorder(),
-				false);
-		txt_nmbr_cInfo = textFieldFactory.textFieldCreate("12340001", null, BorderFactory.createEtchedBorder(),
-				false);
-		txt_mlg_cInfo = textFieldFactory.textFieldCreate("txt_mlg_cInfo", null, BorderFactory.createEtchedBorder(),
-				false);
+		txt_nm_cInfo = textFieldFactory.textFieldCreate("hoil", null, BorderFactory.createEtchedBorder(), false);
+		txt_nmbr_cInfo = textFieldFactory.textFieldCreate("12340001", null, BorderFactory.createEtchedBorder(), false);
+		txt_mlg_cInfo = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), false);
 		txt_frm_chk = textFieldFactory.textFieldCreate("19900417", JTextField.CENTER,
 				BorderFactory.createEtchedBorder(), false);
 		txt_to_chk = textFieldFactory.textFieldCreate("20151117", JTextField.CENTER, BorderFactory.createEtchedBorder(),
 				false);
 
-		txt_vol_res = textFieldFactory.textFieldCreate("txt_vol_res", null, BorderFactory.createEtchedBorder(), false);
-		txt_sum_res = textFieldFactory.textFieldCreate("txt_vol_res", null, BorderFactory.createEtchedBorder(), false); 
-		txt_crnt_prc = textFieldFactory.textFieldCreate("txt_crnt_prc", null, BorderFactory.createEtchedBorder(),
-				false);
-		txt_nw_prc = textFieldFactory.textFieldCreate("txt_crnt_prc", null, BorderFactory.createEtchedBorder(), true);
-		txt_crnt_odr = textFieldFactory.textFieldCreate("txt_crnt_prc", null, BorderFactory.createEtchedBorder(),
-				false);
-		txt_add_odr = textFieldFactory.textFieldCreate("txt_crnt_prc", null, BorderFactory.createEtchedBorder(), true);
+		txt_vol_res = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), false);
+		txt_sum_res = textFieldFactory.textFieldCreate("test", null, BorderFactory.createEtchedBorder(), false);
+		txt_crnt_prc = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), false);
+		txt_nw_prc = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), true);
+		txt_crnt_odr = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), false);
+		txt_add_odr = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), true);
 	}
 
 	private void setLabelComponents() {
@@ -135,10 +136,14 @@ public class MainFrame extends JFrame {
 		brdr_gslnPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		brdr_lpgPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		brdr_dslPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
+<<<<<<< HEAD
 		txt_vol_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
 	            false);
 	      txt_mn_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
 	            false);
+=======
+
+>>>>>>> origin/master
 		lbl_type_sl = labelFactory.labelCreate("Kind of Gas");
 		lbl_mnD_sl = labelFactory.labelCreate("$");
 
@@ -165,13 +170,13 @@ public class MainFrame extends JFrame {
 		lbl_add_odr = labelFactory.labelCreate("How much litter");
 		lbl_chk_odr = labelFactory.labelCreate("Sure to Order?");
 		lbl_wlcm = labelFactory.labelCreate("Welcome to Gas Manger!!");
-		lbl_date = labelFactory.labelCreate("Today is 0000-00-00");
+		lbl_date = labelFactory.labelCreate("Today is " + getCurrentDate());
 	}
 
 	private void setOtherComponents() {
 		tabbedPane = new JTabbedPane();
 		cmb_type_sl = new JComboBox<>();
-		//버튼 묶기 151204
+		// 버튼 묶기 151204
 		ButtonGroup bg_sl = new ButtonGroup();
 		bg_sl.add(rd_mn_sl = new JRadioButton());
 		bg_sl.add(rd_vol_sl = new JRadioButton());
@@ -193,7 +198,36 @@ public class MainFrame extends JFrame {
 		chk_y_prc = new JCheckBox();
 		cmb_type_odr = new JComboBox<>();
 		chk_y_odr = new JCheckBox();
-		//db_obs = new DB_Observable();
+		// db_obs = new DB_Observable();
+
+	}
+
+	private String getCurrentDate() {
+		String currentDate;
+		long tempCurTime = System.currentTimeMillis();
+		SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd");
+		currentDate = timeFormat.format(new Date(tempCurTime));
+		return currentDate;
+	}
+
+	private void setCBItems() {
+
+		String[] yearItem = { "2015", "2016", "2017" };
+		String[] dateItem = new String[31];
+		String[] monthItem = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" };
+		for (int i = 0; i < 31; i++) {
+			dateItem[i] = String.valueOf(i + 1);
+		}
+
+		cmb_yy_chk.setModel(new DefaultComboBoxModel<>(yearItem));
+
+		cmb_mm_chk.setModel(new DefaultComboBoxModel<>(monthItem));
+
+		cmb_dd_chk.setModel(new DefaultComboBoxModel<>(dateItem));
+
+		cmb_frm_chk.setModel(new DefaultComboBoxModel<>(yearItem));
+
+		cmb_to_chk.setModel(new DefaultComboBoxModel<>(monthItem));
 
 	}
 
@@ -208,6 +242,7 @@ public class MainFrame extends JFrame {
 		setTextFieldComponents();
 		setLabelComponents();
 		setOtherComponents();
+		setCBItems();
 
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -326,9 +361,9 @@ public class MainFrame extends JFrame {
 																		.addComponent(brdr_dslPrc_gInfo)
 																		.addComponent(lbl_dslPL_gInfo)))
 								.addComponent(txt_stat_ginfo)).addGap(0, 45, Short.MAX_VALUE)));
-		//이호일 수정 151204
+		// 이호일 수정 151204
 		getData gData = new getData();
-		for(int i=0;i < gData.setType().size();i++) {
+		for (int i = 0; i < gData.setType().size(); i++) {
 			cmb_type_sl.addItem(gData.setType().get(i).toString());
 			cmb_type_res.addItem(gData.setType().get(i).toString());
 			cmb_type_prc.addItem(gData.setType().get(i).toString());
@@ -336,45 +371,40 @@ public class MainFrame extends JFrame {
 		}
 		cmb_type_prc.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				txt_crnt_prc.setText(String.valueOf(
-						gData.getGasPrice(cmb_type_prc.getSelectedItem().toString())));
+				txt_crnt_prc.setText(String.valueOf(gData.getGasPrice(cmb_type_prc.getSelectedItem().toString())));
 
 			}
 		});
-		
+
 		cmb_type_odr.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				txt_crnt_odr.setText(String.valueOf(
-						gData.getGasVolume(cmb_type_odr.getSelectedItem().toString())));	
+				txt_crnt_odr.setText(String.valueOf(gData.getGasVolume(cmb_type_odr.getSelectedItem().toString())));
 			}
 		});
-		
+
 		btn_chg_prc.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				if(chk_y_prc.isSelected()){
-					gData.setGasPrice(cmb_type_prc.getSelectedItem().toString(),Integer.valueOf(txt_nw_prc.getText()));
-					txt_crnt_prc.setText(String.valueOf(
-						gData.getGasPrice(cmb_type_prc.getSelectedItem().toString())));
-				}
-				else
+				if (chk_y_prc.isSelected()) {
+					gData.setGasPrice(cmb_type_prc.getSelectedItem().toString(), Integer.valueOf(txt_nw_prc.getText()));
+					txt_crnt_prc.setText(String.valueOf(gData.getGasPrice(cmb_type_prc.getSelectedItem().toString())));
+				} else
 					JOptionPane.showMessageDialog(null, "Please check \"Sure to change\".");
 
 			}
 		});
-		
+
 		btn_odr_odr.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				if(chk_y_odr.isSelected()){
-					gData.setGasVolume(cmb_type_odr.getSelectedItem().toString(),Integer.valueOf(txt_add_odr.getText()));
-					txt_crnt_odr.setText(String.valueOf(
-						gData.getGasVolume(cmb_type_odr.getSelectedItem().toString())));
-				}
-				else
+				if (chk_y_odr.isSelected()) {
+					gData.setGasVolume(cmb_type_odr.getSelectedItem().toString(),
+							Integer.valueOf(txt_add_odr.getText()));
+					txt_crnt_odr.setText(String.valueOf(gData.getGasVolume(cmb_type_odr.getSelectedItem().toString())));
+				} else
 					JOptionPane.showMessageDialog(null, "Please check \"Sure to order\".");
 
 			}
 		});
-		
+
 		rd_mn_sl.setText("By Money");
 		rd_mn_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -448,8 +478,6 @@ public class MainFrame extends JFrame {
 						.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
 						.addGroup(jPanel8Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 								.addComponent(btn_ok_sl).addComponent(btn_cncl_sl))));
-
-		
 
 		GroupLayout jPanel9Layout = new GroupLayout(pnl_cInfo);
 		pnl_cInfo.setLayout(jPanel9Layout);
@@ -536,16 +564,6 @@ public class MainFrame extends JFrame {
 			}
 		});
 
-		cmb_yy_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-		cmb_mm_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-		cmb_dd_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-		cmb_frm_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-		cmb_to_chk.setModel(new DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
 		txt_frm_chk.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jTextField7ActionPerformed(evt);
@@ -625,7 +643,6 @@ public class MainFrame extends JFrame {
 						jPanel2Layout.createSequentialGroup().addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(btn_chk_chk).addContainerGap()));
 
-
 		txt_vol_res.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jTextField8ActionPerformed(evt);
@@ -633,6 +650,7 @@ public class MainFrame extends JFrame {
 		});
 
 		// 이호일 수정 151203
+<<<<<<< HEAD
 		btn_ok_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				if(rd_mn_sl.isSelected()) {
@@ -654,20 +672,47 @@ public class MainFrame extends JFrame {
 					System.out.println("error");
 			}
 		});
+=======
+
+		/*
+		 * btn_ok_sl.addActionListener(new java.awt.event.ActionListener() {
+		 * public void actionPerformed(java.awt.event.ActionEvent evt) {
+		 * db_obs.action(); } }); db_obs.addObserver(brdr_lpgVol_gInfo);
+		 * db_obs.addObserver(brdr_dslVol_gInfo);
+		 * db_obs.addObserver(brdr_gslnVol_gInfo);
+		 */
+
+		/*
+		 * 
+		 * ////////////////////////////////////이호일 수정 151203 >>>>>>> Stashed
+		 * changes btn_ok_sl.addActionListener(new
+		 * java.awt.event.ActionListener() { public void
+		 * actionPerformed(java.awt.event.ActionEvent evt) {
+		 * gData.insertSales(Integer.valueOf(txt_nmbr_cInfo.getText()),
+		 * cmb_type_sl.getSelectedItem().toString(),
+		 * Integer.valueOf(brdr_vol_sl.toString()),
+		 * Integer.valueOf(brdr_mn_sl.toString()),
+		 * Integer.valueOf(txt_mlg_sl.toString())); } }); <<<<<<< Updated
+		 * upstream db_obs.addObserver(brdr_lpgVol_gInfo);
+		 * db_obs.addObserver(brdr_dslVol_gInfo);
+		 * db_obs.addObserver(brdr_gslnVol_gInfo);
+		 */
+>>>>>>> origin/master
 
 		btn_enrl_cInfo.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				gData.insertCInfo(txt_nm_cInfo.getText().toString(),Integer.valueOf(txt_nmbr_cInfo.getText()));
+				gData.insertCInfo(txt_nm_cInfo.getText().toString(), Integer.valueOf(txt_nmbr_cInfo.getText()));
 			}
 		});
-		
+
 		btn_chk_cInfo.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				txt_mlg_cInfo.setText(String.valueOf(gData.checkCInfo(txt_nm_cInfo.getText().toString(),
 						Integer.valueOf(txt_nmbr_cInfo.getText()))));
-				
+
 			}
 		});
+<<<<<<< HEAD
 		//////수정중 
 		btn_chk_chk.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -677,13 +722,20 @@ public class MainFrame extends JFrame {
 			}
 		});
 		
+=======
+
+>>>>>>> origin/master
 		brdr_lpgVol_gInfo.setText(String.valueOf(gData.getGasVolume("lpg")));
 		brdr_lpgPrc_gInfo.setText(String.valueOf(gData.getGasPrice("lpg")));
 		brdr_dslVol_gInfo.setText(String.valueOf(gData.getGasVolume("diesel")));
 		brdr_dslPrc_gInfo.setText(String.valueOf(gData.getGasPrice("diesel")));
 		brdr_gslnVol_gInfo.setText(String.valueOf(gData.getGasVolume("gasoline")));
 		brdr_gslnPrc_gInfo.setText(String.valueOf(gData.getGasPrice("gasoline")));
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> origin/master
 		GroupLayout jPanel1Layout = new GroupLayout(pnl_res);
 		pnl_res.setLayout(jPanel1Layout);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -694,9 +746,10 @@ public class MainFrame extends JFrame {
 						.addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 								.addGroup(jPanel1Layout.createSequentialGroup().addGap(183, 183, 183).addComponent(
 										lbl_vol_res, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE))
-								.addGroup(jPanel1Layout.createSequentialGroup().addGap(178, 178, 178)
-										.addComponent(txt_vol_res, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE)
+								.addGroup(
+										jPanel1Layout.createSequentialGroup().addGap(178, 178, 178)
+												.addComponent(txt_vol_res, GroupLayout.DEFAULT_SIZE, 57,
+														Short.MAX_VALUE)
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
 										.addComponent(lbl_volL_res)
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 233, Short.MAX_VALUE)
@@ -704,8 +757,7 @@ public class MainFrame extends JFrame {
 						.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
 						.addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 								.addComponent(lbl_sum_res, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txt_sum_res, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE))
+								.addComponent(txt_sum_res, GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE))
 						.addGap(75, 75, 75)));
 		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel1Layout.createSequentialGroup().addGap(18, 18, 18)
@@ -751,9 +803,8 @@ public class MainFrame extends JFrame {
 										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGap(109, 109, 109)
 						.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-								.addComponent(txt_crnt_prc, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addComponent(lbl_crnt_prc).addComponent(btn_chg_prc))
+								.addComponent(txt_crnt_prc, 80, 80, 80).addComponent(lbl_crnt_prc)
+								.addComponent(btn_chg_prc))
 						.addGap(112, 112, 112)
 						.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
 								.addGroup(GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
@@ -761,9 +812,7 @@ public class MainFrame extends JFrame {
 												.addComponent(btn_cncl_prc).addComponent(lbl_nw_prc))
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
 										.addComponent(lbl_chg_prc).addGap(71, 71, 71))
-								.addGroup(jPanel3Layout.createSequentialGroup()
-										.addComponent(txt_nw_prc, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE)
+								.addGroup(jPanel3Layout.createSequentialGroup().addComponent(txt_nw_prc, 80, 80, 80)
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
 												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 										.addComponent(chk_y_prc).addGap(92, 92, 92)))));
@@ -776,10 +825,10 @@ public class MainFrame extends JFrame {
 						.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 								.addComponent(cmb_type_prc, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(txt_crnt_prc, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addComponent(txt_nw_prc, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
+								.addComponent(txt_crnt_prc, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(txt_nw_prc, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
 								.addComponent(chk_y_prc))
 						.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
 						.addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
@@ -797,9 +846,7 @@ public class MainFrame extends JFrame {
 										GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGap(119, 119, 119)
 						.addGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-								.addComponent(lbl_crnt_odr)
-								.addComponent(txt_crnt_odr, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
+								.addComponent(lbl_crnt_odr).addComponent(txt_crnt_odr, 80, 80, 80)
 								.addComponent(btn_odr_odr))
 						.addGap(123, 123, 123)
 						.addGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -809,9 +856,7 @@ public class MainFrame extends JFrame {
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
 												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 										.addComponent(lbl_chk_odr).addGap(78, 78, 78))
-								.addGroup(jPanel11Layout.createSequentialGroup()
-										.addComponent(txt_add_odr, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE)
+								.addGroup(jPanel11Layout.createSequentialGroup().addComponent(txt_add_odr, 80, 80, 80)
 										.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
 												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 										.addComponent(chk_y_odr).addGap(98, 98, 98)))));
@@ -826,10 +871,10 @@ public class MainFrame extends JFrame {
 						.addGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 								.addComponent(cmb_type_odr, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-								.addComponent(txt_crnt_odr, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addComponent(txt_add_odr, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
+								.addComponent(txt_crnt_odr, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
+								.addComponent(txt_add_odr, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)
 								.addComponent(chk_y_odr))
 						.addGap(34, 34, 34).addGroup(jPanel11Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 								.addComponent(btn_cncl_odr).addComponent(btn_odr_odr))
@@ -1056,6 +1101,8 @@ public class MainFrame extends JFrame {
 	private JTextFieldComponent txt_mn_sl;
 	private JTextFieldComponent txt_stat_ginfo;
 	private JTextFieldComponent txt_crnt_prc;
+	private JTextFieldComponent txt_vol_sl;
+	private JTextFieldComponent txt_mn_sl;
 	private JTextFieldComponent txt_nw_prc;
 	private JTextFieldComponent txt_crnt_odr;
 	private JTextFieldComponent txt_add_odr;
@@ -1067,6 +1114,6 @@ public class MainFrame extends JFrame {
 	private JTextFieldComponent txt_frm_chk;
 	private JTextFieldComponent txt_vol_res;
 	private JTextFieldComponent txt_sum_res;
-	//private DB_Observable db_obs;
+	// private DB_Observable db_obs;
 	// End of variables declaration//GEN-END:variables
 }
