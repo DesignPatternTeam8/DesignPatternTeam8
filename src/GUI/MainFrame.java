@@ -6,6 +6,7 @@
 package GUI;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.swing.BorderFactory;
@@ -38,7 +39,7 @@ import JSwingFactory.JTextFieldFactory;
 
 /**
  *
- * @author 源��옱愿�
+ * @author 繹먲옙占쎌삺?울옙
  */
 public class MainFrame extends JFrame {
 
@@ -49,7 +50,7 @@ public class MainFrame extends JFrame {
 	 */
 	public MainFrame() throws Exception {
 		initComponents();
-		saleThread.start();
+
 	}
 
 	/**
@@ -74,7 +75,6 @@ public class MainFrame extends JFrame {
 	}
 
 	private void setButtonComponents() {
-
 		btn_ok_sl = buttonFactory.buttonCreate("OK");
 		btn_cncl_sl = buttonFactory.buttonCreate("Cancel");
 		btn_chk_cInfo = buttonFactory.buttonCreate("Check");
@@ -87,13 +87,13 @@ public class MainFrame extends JFrame {
 	}
 
 	private void setTextFieldComponents() {
-		txt_vol_sl = textFieldFactory.textFieldCreate(null, JTextField.CENTER, BorderFactory.createEtchedBorder(),
+		txt_vol_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
 				false);
-		txt_mn_sl = textFieldFactory.textFieldCreate(null, JTextField.CENTER, BorderFactory.createEtchedBorder(),
+		txt_mn_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
 				false);
 		txt_stat_ginfo = textFieldFactory.textFieldCreate(" Enough Gas for all kinds", JTextField.CENTER,
 				BorderFactory.createEtchedBorder(), false);
-		txt_mlg_sl = textFieldFactory.textFieldCreate(null, JTextField.CENTER, BorderFactory.createEtchedBorder(),
+		txt_mlg_sl = textFieldFactory.textFieldCreate("00", JTextField.CENTER, BorderFactory.createEtchedBorder(),
 				true);
 		txt_nm_cInfo = textFieldFactory.textFieldCreate("hoil", null, BorderFactory.createEtchedBorder(), false);
 		txt_nmbr_cInfo = textFieldFactory.textFieldCreate("12340001", null, BorderFactory.createEtchedBorder(), false);
@@ -104,7 +104,7 @@ public class MainFrame extends JFrame {
 				false);
 
 		txt_vol_res = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), false);
-		txt_sum_res = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), false);
+		txt_sum_res = textFieldFactory.textFieldCreate("test", null, BorderFactory.createEtchedBorder(), false);
 		txt_crnt_prc = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), false);
 		txt_nw_prc = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), true);
 		txt_crnt_odr = textFieldFactory.textFieldCreate(null, null, BorderFactory.createEtchedBorder(), false);
@@ -138,9 +138,9 @@ public class MainFrame extends JFrame {
 		brdr_lpgPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		brdr_dslPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		txt_vol_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
-				false);
-		txt_mn_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
-				false);
+	            false);
+	      txt_mn_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
+	            false);
 
 		lbl_type_sl = labelFactory.labelCreate("Kind of Gas");
 		lbl_mnD_sl = labelFactory.labelCreate("$");
@@ -174,12 +174,12 @@ public class MainFrame extends JFrame {
 	private void setOtherComponents() {
 		tabbedPane = new JTabbedPane();
 		cmb_type_sl = new JComboBox<>();
-		// 버튼 묶기 151204
+		// 踰꾪듉 臾띔린 151204
 		ButtonGroup bg_sl = new ButtonGroup();
 		bg_sl.add(rd_mn_sl = new JRadioButton());
 		bg_sl.add(rd_vol_sl = new JRadioButton());
 		chk_mlg_sl = new JCheckBox();
-		// 이호일 버튼 묶기 151203
+		// ?댄샇??踰꾪듉 臾띔린 151203
 		ButtonGroup bg_chk = new ButtonGroup();
 		bg_chk.add(rd_date_chk = new JRadioButton());
 		bg_chk.add(rd_mnth_chk = new JRadioButton());
@@ -197,7 +197,6 @@ public class MainFrame extends JFrame {
 		cmb_type_odr = new JComboBox<>();
 		chk_y_odr = new JCheckBox();
 		// db_obs = new DB_Observable();
-
 	}
 
 	private String getCurrentDate() {
@@ -208,24 +207,13 @@ public class MainFrame extends JFrame {
 		return currentDate;
 	}
 
-	private void convertSaleValue() {
-		if (rd_mn_sl.isSelected()) {
-			txt_mn_sl.setEditable(true);
-			txt_vol_sl.setEditable(false);
-		}
-		if (rd_vol_sl.isSelected()) {
-			txt_mn_sl.setEditable(false);
-			txt_vol_sl.setEditable(true);
-		}
-	}
-
 	private void setCBItems() {
 
 		String[] yearItem = { "2015", "2016", "2017" };
 		String[] dateItem = new String[31];
-		String[] monthItem = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" };
+		String[] monthItem = { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
 		for (int i = 0; i < 31; i++) {
-			dateItem[i] = String.valueOf(i + 1);
+			dateItem[i] = String.format("%02d", i + 1);
 		}
 
 		cmb_yy_chk.setModel(new DefaultComboBoxModel<>(yearItem));
@@ -370,7 +358,7 @@ public class MainFrame extends JFrame {
 																		.addComponent(brdr_dslPrc_gInfo)
 																		.addComponent(lbl_dslPL_gInfo)))
 								.addComponent(txt_stat_ginfo)).addGap(0, 45, Short.MAX_VALUE)));
-		// 이호일 수정 151204
+		// ?댄샇???섏젙 151204
 		getData gData = new getData();
 		for (int i = 0; i < gData.setType().size(); i++) {
 			cmb_type_sl.addItem(gData.setType().get(i).toString());
@@ -418,9 +406,8 @@ public class MainFrame extends JFrame {
 		rd_mn_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jRadioButton1ActionPerformed(evt);
-				// txt_mn_sl.setEditable(true);
-				// txt_vol_sl.setEditable(false);
-				convertSaleValue();
+				txt_mn_sl.setEditable(true);
+
 			}
 		});
 
@@ -428,9 +415,8 @@ public class MainFrame extends JFrame {
 		rd_vol_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jRadioButton1ActionPerformed(evt);
-				convertSaleValue();
-				// txt_vol_sl.setEditable(true);
-				// txt_mn_sl.setEditable(false);
+				txt_vol_sl.setEditable(true);
+
 			}
 		});
 		chk_mlg_sl.setText("Use Mileage");
@@ -571,7 +557,8 @@ public class MainFrame extends JFrame {
 		rd_frmTo_chk.setText("From.. To..");
 		rd_frmTo_chk.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jRadioButton12ActionPerformed(evt);
+				txt_frm_chk.setEditable(true);
+				txt_to_chk.setEditable(true);
 			}
 		});
 
@@ -660,27 +647,50 @@ public class MainFrame extends JFrame {
 			}
 		});
 
-		// 이호일 수정 151203
+		// ?댄샇???섏젙 151203
 
 		btn_ok_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				if (rd_mn_sl.isSelected()) {
+				if(rd_mn_sl.isSelected()) {
 					int volume;
-					gData.insertSalesMN(Integer.valueOf(txt_nmbr_cInfo.getText()),
-							cmb_type_sl.getSelectedItem().toString(),
-							volume = (Integer.valueOf(txt_mn_sl.getText())
-									/ gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())),
-							Integer.valueOf(txt_mn_sl.getText()), Integer.valueOf(txt_mlg_sl.getText()));
+					gData.insertSales(Integer.valueOf(txt_nmbr_cInfo.getText()), 
+									cmb_type_sl.getSelectedItem().toString(), 
+									volume = (Integer.valueOf(txt_mn_sl.getText())/gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())),
+									Integer.valueOf(txt_mn_sl.getText()), 
+									Integer.valueOf(txt_mlg_sl.getText()));
 					gData.setGasVolume(cmb_type_sl.getSelectedItem().toString(), -volume);
-				} else if (rd_vol_sl.isSelected()) {
-					gData.insertSalesVOL(Integer.valueOf(txt_nmbr_cInfo.getText()),
+					if(cmb_type_sl.getSelectedItem().toString()=="Premium") {
+						brdr_lpgVol_gInfo.setText(String.valueOf(gData.getGasVolume("Premium")));
+						brdr_lpgPrc_gInfo.setText(String.valueOf(gData.getGasPrice("Premium")));
+					}
+					else if(cmb_type_sl.getSelectedItem().toString()=="Diesel") {
+						brdr_dslVol_gInfo.setText(String.valueOf(gData.getGasVolume("Diesel")));
+						brdr_dslPrc_gInfo.setText(String.valueOf(gData.getGasPrice("Diesel")));
+					}
+					else {
+						brdr_gslnVol_gInfo.setText(String.valueOf(gData.getGasVolume("Regular")));
+						brdr_gslnPrc_gInfo.setText(String.valueOf(gData.getGasPrice("Regular")));
+					}
+				}
+				else if(rd_vol_sl.isSelected()) {
+					gData.insertSales(Integer.valueOf(txt_nmbr_cInfo.getText()), 
 							cmb_type_sl.getSelectedItem().toString(), Integer.valueOf(txt_vol_sl.getText()),
-							(Integer.valueOf(txt_vol_sl.getText())
-									* gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())),
-							Integer.valueOf(txt_mlg_sl.getText()));
-					gData.setGasVolume(cmb_type_sl.getSelectedItem().toString(),
-							-Integer.valueOf(txt_vol_sl.getText()));
-				} else
+							(Integer.valueOf(txt_vol_sl.getText())*gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())), Integer.valueOf(txt_mlg_sl.getText()));
+					gData.setGasVolume(cmb_type_sl.getSelectedItem().toString(), -Integer.valueOf(txt_vol_sl.getText()));
+					if(cmb_type_sl.getSelectedItem().toString()=="Premium") {
+						brdr_lpgVol_gInfo.setText(String.valueOf(gData.getGasVolume("Premium")));
+						brdr_lpgPrc_gInfo.setText(String.valueOf(gData.getGasPrice("Premium")));
+					}
+					else if(cmb_type_sl.getSelectedItem().toString()=="Diesel") {
+						brdr_dslVol_gInfo.setText(String.valueOf(gData.getGasVolume("Diesel")));
+						brdr_dslPrc_gInfo.setText(String.valueOf(gData.getGasPrice("Diesel")));
+					}
+					else {
+						brdr_gslnVol_gInfo.setText(String.valueOf(gData.getGasVolume("Regular")));
+						brdr_gslnPrc_gInfo.setText(String.valueOf(gData.getGasPrice("Regular")));
+					}
+				}
+				else
 					System.out.println("error");
 			}
 		});
@@ -695,7 +705,7 @@ public class MainFrame extends JFrame {
 
 		/*
 		 * 
-		 * ////////////////////////////////////이호일 수정 151203 >>>>>>> Stashed
+		 * ////////////////////////////////////?댄샇???섏젙 151203 >>>>>>> Stashed
 		 * changes btn_ok_sl.addActionListener(new
 		 * java.awt.event.ActionListener() { public void
 		 * actionPerformed(java.awt.event.ActionEvent evt) {
@@ -723,15 +733,55 @@ public class MainFrame extends JFrame {
 			}
 		});
 
-		////// 수정중
+		//////?섏젙以?
 		btn_chk_chk.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				txt_mlg_cInfo.setText(String.valueOf(gData.checkCInfo(txt_nm_cInfo.getText().toString(),
-						Integer.valueOf(txt_nmbr_cInfo.getText()))));
-
+				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+				if(rd_tdy_chk.isSelected()) {
+					txt_vol_res.setText(String.valueOf(gData.checkResultVOL(cmb_type_res.getSelectedItem().toString(),
+							dateFormat.format(new Date(System.currentTimeMillis())),
+							dateFormat.format(new Date(System.currentTimeMillis())))));
+					txt_sum_res.setText(String.valueOf(gData.checkResultMN(cmb_type_res.getSelectedItem().toString(),
+							dateFormat.format(new Date(System.currentTimeMillis())),
+							dateFormat.format(new Date(System.currentTimeMillis())))));
+				}
+				
+				else if (rd_date_chk.isSelected()) {
+					txt_vol_res.setText(String.valueOf(gData.checkResultVOL(cmb_type_res.getSelectedItem().toString(),
+							cmb_yy_chk.getSelectedItem().toString()+cmb_mm_chk.getSelectedItem().toString()+cmb_dd_chk.getSelectedItem().toString(),
+							cmb_yy_chk.getSelectedItem().toString()+cmb_mm_chk.getSelectedItem().toString()+cmb_dd_chk.getSelectedItem().toString())));
+					txt_sum_res.setText(String.valueOf(gData.checkResultMN(cmb_type_res.getSelectedItem().toString(),
+							cmb_yy_chk.getSelectedItem().toString()+cmb_mm_chk.getSelectedItem().toString()+cmb_dd_chk.getSelectedItem().toString(),
+							cmb_yy_chk.getSelectedItem().toString()+cmb_mm_chk.getSelectedItem().toString()+cmb_dd_chk.getSelectedItem().toString())));
+				}
+				else if(rd_mnth_chk.isSelected()) {
+					Calendar calendar =Calendar.getInstance();
+					txt_vol_res.setText(String.valueOf(gData.checkResultVOL(cmb_type_res.getSelectedItem().toString(),
+							String.valueOf(calendar.get(Calendar.YEAR))+String.valueOf(calendar.get(Calendar.MONTH)+1)+"01",
+							String.valueOf(calendar.get(Calendar.YEAR))+String.valueOf(calendar.get(Calendar.MONTH)+1)+"31")));
+					txt_sum_res.setText(String.valueOf(gData.checkResultMN(cmb_type_res.getSelectedItem().toString(),
+							String.valueOf(calendar.get(Calendar.YEAR))+String.valueOf(calendar.get(Calendar.MONTH)+1)+"01",
+							String.valueOf(calendar.get(Calendar.YEAR))+String.valueOf(calendar.get(Calendar.MONTH)+1)+"31")));
+				}
+				else if(rd_prd_chk.isSelected()) {
+					txt_vol_res.setText(String.valueOf(gData.checkResultVOL(cmb_type_res.getSelectedItem().toString(),
+							cmb_frm_chk.getSelectedItem().toString()+cmb_to_chk.getSelectedItem().toString()+"01",
+							cmb_frm_chk.getSelectedItem().toString()+cmb_to_chk.getSelectedItem().toString()+"31")));
+					txt_sum_res.setText(String.valueOf(gData.checkResultMN(cmb_type_res.getSelectedItem().toString(),
+							cmb_frm_chk.getSelectedItem().toString()+cmb_to_chk.getSelectedItem().toString()+"01",
+							cmb_frm_chk.getSelectedItem().toString()+cmb_to_chk.getSelectedItem().toString()+"31")));
+				}
+				else {
+					txt_vol_res.setText(String.valueOf(gData.checkResultVOL(cmb_type_res.getSelectedItem().toString(),
+							txt_frm_chk.getText().toString(),
+							txt_to_chk.getText().toString())));
+					txt_sum_res.setText(String.valueOf(gData.checkResultMN(cmb_type_res.getSelectedItem().toString(),
+							txt_frm_chk.getText().toString(),
+							txt_to_chk.getText().toString())));
+				}
 			}
 		});
-
+	
 		brdr_lpgVol_gInfo.setText(String.valueOf(gData.getGasVolume("lpg")));
 		brdr_lpgPrc_gInfo.setText(String.valueOf(gData.getGasPrice("lpg")));
 		brdr_dslVol_gInfo.setText(String.valueOf(gData.getGasVolume("diesel")));
@@ -986,7 +1036,6 @@ public class MainFrame extends JFrame {
 					break;
 				}
 			}
-
 		} catch (ClassNotFoundException ex) {
 			java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (InstantiationException ex) {
@@ -1002,7 +1051,6 @@ public class MainFrame extends JFrame {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-
 					new MainFrame().setVisible(true);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -1117,63 +1165,7 @@ public class MainFrame extends JFrame {
 	private JTextFieldComponent txt_frm_chk;
 	private JTextFieldComponent txt_vol_res;
 	private JTextFieldComponent txt_sum_res;
+	private Calendar claendar;
 	// private DB_Observable db_obs;
 	// End of variables declaration//GEN-END:variables
-	SaleThread saleThread = new SaleThread();
-
-	class SaleThread extends Thread {
-
-		public void setState() {
-			String defaultText = " Enough Gas for all kinds";
-			String overMlgText = " Using Over Mileage";
-			String needOrderText = "Need to Order for";
-
-			/*
-			 * chk_mlg_sl btn_ok_sl txt_mlg_sl
-			 */
-
-		}
-
-		public void run() {
-
-			while (true) {
-
-				String kind = (String) cmb_type_sl.getSelectedItem();
-				int rPrice = Integer.parseInt(brdr_gslnPrc_gInfo.getText());
-				int pPrice = Integer.parseInt(brdr_lpgPrc_gInfo.getText());
-				int dPrice = Integer.parseInt(brdr_dslPrc_gInfo.getText());
-				int price;
-				if (kind.equals("diesel")) {
-					price = dPrice;
-				} else if (kind.equals("regular")) {
-					price = rPrice;
-				} else {
-					price = pPrice;
-				}
-				int money;
-				int vol = 0;
-				String tempText;
-				try {
-					if (rd_mn_sl.isSelected()) {
-						if (txt_mn_sl.getText() != null && !txt_mn_sl.getText().equals("")) {
-							money = Integer.parseInt(txt_mn_sl.getText());
-							tempText = String.valueOf((float) money / price);
-							txt_vol_sl.setText(tempText);
-						}
-
-					} else if (rd_vol_sl.isSelected()) {
-						if (txt_vol_sl.getText() != null && !txt_vol_sl.getText().equals(""))
-							vol = Integer.parseInt(txt_vol_sl.getText());
-						tempText = String.valueOf((float) vol * price);
-						txt_mn_sl.setText(tempText);
-					}
-				} catch (java.lang.NumberFormatException e) {
-
-				} catch (java.lang.NullPointerException ex) {
-
-				}
-
-			}
-		}
-	}
 }
