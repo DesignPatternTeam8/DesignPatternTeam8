@@ -50,7 +50,8 @@ public class MainFrame extends JFrame {
 	 */
 	public MainFrame() throws Exception {
 		initComponents();
-
+		SaleThread saleThread = new SaleThread();
+		saleThread.start();
 	}
 
 	/**
@@ -138,9 +139,9 @@ public class MainFrame extends JFrame {
 		brdr_lpgPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		brdr_dslPrc_gInfo = labelFactory.labelCreate("00", SwingConstants.RIGHT, BorderFactory.createEtchedBorder());
 		txt_vol_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
-	            false);
-	      txt_mn_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
-	            false);
+				false);
+		txt_mn_sl = textFieldFactory.textFieldCreate("01", JTextField.CENTER, BorderFactory.createEtchedBorder(),
+				false);
 
 		lbl_type_sl = labelFactory.labelCreate("Kind of Gas");
 		lbl_mnD_sl = labelFactory.labelCreate("$");
@@ -226,6 +227,17 @@ public class MainFrame extends JFrame {
 
 		cmb_to_chk.setModel(new DefaultComboBoxModel<>(monthItem));
 
+	}
+
+	private void convertSaleValue() {
+		if (rd_mn_sl.isSelected()) {
+			txt_mn_sl.setEditable(true);
+			txt_vol_sl.setEditable(false);
+		}
+		if (rd_vol_sl.isSelected()) {
+			txt_mn_sl.setEditable(false);
+			txt_vol_sl.setEditable(true);
+		}
 	}
 
 	@SuppressWarnings("unchecked")
@@ -406,7 +418,7 @@ public class MainFrame extends JFrame {
 		rd_mn_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jRadioButton1ActionPerformed(evt);
-				txt_mn_sl.setEditable(true);
+				convertSaleValue();
 
 			}
 		});
@@ -415,7 +427,7 @@ public class MainFrame extends JFrame {
 		rd_vol_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jRadioButton1ActionPerformed(evt);
-				txt_vol_sl.setEditable(true);
+				convertSaleValue();
 
 			}
 		});
@@ -651,46 +663,43 @@ public class MainFrame extends JFrame {
 
 		btn_ok_sl.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				if(rd_mn_sl.isSelected()) {
+				if (rd_mn_sl.isSelected()) {
 					int volume;
-					gData.insertSales(Integer.valueOf(txt_nmbr_cInfo.getText()), 
-									cmb_type_sl.getSelectedItem().toString(), 
-									volume = (Integer.valueOf(txt_mn_sl.getText())/gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())),
-									Integer.valueOf(txt_mn_sl.getText()), 
-									Integer.valueOf(txt_mlg_sl.getText()));
+					gData.insertSales(Integer.valueOf(txt_nmbr_cInfo.getText()),
+							cmb_type_sl.getSelectedItem().toString(),
+							volume = (Integer.valueOf(txt_mn_sl.getText())
+									/ gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())),
+							Integer.valueOf(txt_mn_sl.getText()), Integer.valueOf(txt_mlg_sl.getText()));
 					gData.setGasVolume(cmb_type_sl.getSelectedItem().toString(), -volume);
-					if(cmb_type_sl.getSelectedItem().toString()=="Premium") {
+					if (cmb_type_sl.getSelectedItem().toString() == "Premium") {
 						brdr_lpgVol_gInfo.setText(String.valueOf(gData.getGasVolume("Premium")));
 						brdr_lpgPrc_gInfo.setText(String.valueOf(gData.getGasPrice("Premium")));
-					}
-					else if(cmb_type_sl.getSelectedItem().toString()=="Diesel") {
+					} else if (cmb_type_sl.getSelectedItem().toString() == "Diesel") {
 						brdr_dslVol_gInfo.setText(String.valueOf(gData.getGasVolume("Diesel")));
 						brdr_dslPrc_gInfo.setText(String.valueOf(gData.getGasPrice("Diesel")));
-					}
-					else {
+					} else {
 						brdr_gslnVol_gInfo.setText(String.valueOf(gData.getGasVolume("Regular")));
 						brdr_gslnPrc_gInfo.setText(String.valueOf(gData.getGasPrice("Regular")));
 					}
-				}
-				else if(rd_vol_sl.isSelected()) {
-					gData.insertSales(Integer.valueOf(txt_nmbr_cInfo.getText()), 
+				} else if (rd_vol_sl.isSelected()) {
+					gData.insertSales(Integer.valueOf(txt_nmbr_cInfo.getText()),
 							cmb_type_sl.getSelectedItem().toString(), Integer.valueOf(txt_vol_sl.getText()),
-							(Integer.valueOf(txt_vol_sl.getText())*gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())), Integer.valueOf(txt_mlg_sl.getText()));
-					gData.setGasVolume(cmb_type_sl.getSelectedItem().toString(), -Integer.valueOf(txt_vol_sl.getText()));
-					if(cmb_type_sl.getSelectedItem().toString()=="Premium") {
+							(Integer.valueOf(txt_vol_sl.getText())
+									* gData.getGasPrice(cmb_type_sl.getSelectedItem().toString())),
+							Integer.valueOf(txt_mlg_sl.getText()));
+					gData.setGasVolume(cmb_type_sl.getSelectedItem().toString(),
+							-Integer.valueOf(txt_vol_sl.getText()));
+					if (cmb_type_sl.getSelectedItem().toString() == "Premium") {
 						brdr_lpgVol_gInfo.setText(String.valueOf(gData.getGasVolume("Premium")));
 						brdr_lpgPrc_gInfo.setText(String.valueOf(gData.getGasPrice("Premium")));
-					}
-					else if(cmb_type_sl.getSelectedItem().toString()=="Diesel") {
+					} else if (cmb_type_sl.getSelectedItem().toString() == "Diesel") {
 						brdr_dslVol_gInfo.setText(String.valueOf(gData.getGasVolume("Diesel")));
 						brdr_dslPrc_gInfo.setText(String.valueOf(gData.getGasPrice("Diesel")));
-					}
-					else {
+					} else {
 						brdr_gslnVol_gInfo.setText(String.valueOf(gData.getGasVolume("Regular")));
 						brdr_gslnPrc_gInfo.setText(String.valueOf(gData.getGasPrice("Regular")));
 					}
-				}
-				else
+				} else
 					System.out.println("error");
 			}
 		});
@@ -733,11 +742,11 @@ public class MainFrame extends JFrame {
 			}
 		});
 
-		//////?섏젙以?
+		////// ?섏젙以?
 		btn_chk_chk.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-				if(rd_tdy_chk.isSelected()) {
+				if (rd_tdy_chk.isSelected()) {
 					txt_vol_res.setText(String.valueOf(gData.checkResultVOL(cmb_type_res.getSelectedItem().toString(),
 							dateFormat.format(new Date(System.currentTimeMillis())),
 							dateFormat.format(new Date(System.currentTimeMillis())))));
@@ -745,43 +754,52 @@ public class MainFrame extends JFrame {
 							dateFormat.format(new Date(System.currentTimeMillis())),
 							dateFormat.format(new Date(System.currentTimeMillis())))));
 				}
-				
+
 				else if (rd_date_chk.isSelected()) {
 					txt_vol_res.setText(String.valueOf(gData.checkResultVOL(cmb_type_res.getSelectedItem().toString(),
-							cmb_yy_chk.getSelectedItem().toString()+cmb_mm_chk.getSelectedItem().toString()+cmb_dd_chk.getSelectedItem().toString(),
-							cmb_yy_chk.getSelectedItem().toString()+cmb_mm_chk.getSelectedItem().toString()+cmb_dd_chk.getSelectedItem().toString())));
+							cmb_yy_chk.getSelectedItem().toString() + cmb_mm_chk.getSelectedItem().toString()
+									+ cmb_dd_chk.getSelectedItem().toString(),
+							cmb_yy_chk.getSelectedItem().toString() + cmb_mm_chk.getSelectedItem().toString()
+									+ cmb_dd_chk.getSelectedItem().toString())));
 					txt_sum_res.setText(String.valueOf(gData.checkResultMN(cmb_type_res.getSelectedItem().toString(),
-							cmb_yy_chk.getSelectedItem().toString()+cmb_mm_chk.getSelectedItem().toString()+cmb_dd_chk.getSelectedItem().toString(),
-							cmb_yy_chk.getSelectedItem().toString()+cmb_mm_chk.getSelectedItem().toString()+cmb_dd_chk.getSelectedItem().toString())));
-				}
-				else if(rd_mnth_chk.isSelected()) {
-					Calendar calendar =Calendar.getInstance();
+							cmb_yy_chk.getSelectedItem().toString() + cmb_mm_chk.getSelectedItem().toString()
+									+ cmb_dd_chk.getSelectedItem().toString(),
+							cmb_yy_chk.getSelectedItem().toString() + cmb_mm_chk.getSelectedItem().toString()
+									+ cmb_dd_chk.getSelectedItem().toString())));
+				} else if (rd_mnth_chk.isSelected()) {
+					Calendar calendar = Calendar.getInstance();
 					txt_vol_res.setText(String.valueOf(gData.checkResultVOL(cmb_type_res.getSelectedItem().toString(),
-							String.valueOf(calendar.get(Calendar.YEAR))+String.valueOf(calendar.get(Calendar.MONTH)+1)+"01",
-							String.valueOf(calendar.get(Calendar.YEAR))+String.valueOf(calendar.get(Calendar.MONTH)+1)+"31")));
+							String.valueOf(calendar.get(Calendar.YEAR))
+									+ String.valueOf(calendar.get(Calendar.MONTH) + 1) + "01",
+							String.valueOf(calendar.get(Calendar.YEAR))
+									+ String.valueOf(calendar.get(Calendar.MONTH) + 1) + "31")));
 					txt_sum_res.setText(String.valueOf(gData.checkResultMN(cmb_type_res.getSelectedItem().toString(),
-							String.valueOf(calendar.get(Calendar.YEAR))+String.valueOf(calendar.get(Calendar.MONTH)+1)+"01",
-							String.valueOf(calendar.get(Calendar.YEAR))+String.valueOf(calendar.get(Calendar.MONTH)+1)+"31")));
-				}
-				else if(rd_prd_chk.isSelected()) {
+							String.valueOf(calendar.get(Calendar.YEAR))
+									+ String.valueOf(calendar.get(Calendar.MONTH) + 1) + "01",
+							String.valueOf(calendar.get(Calendar.YEAR))
+									+ String.valueOf(calendar.get(Calendar.MONTH) + 1) + "31")));
+				} else if (rd_prd_chk.isSelected()) {
+					txt_vol_res
+							.setText(String.valueOf(gData.checkResultVOL(cmb_type_res.getSelectedItem().toString(),
+									cmb_frm_chk.getSelectedItem().toString() + cmb_to_chk.getSelectedItem().toString()
+											+ "01",
+							cmb_frm_chk.getSelectedItem().toString() + cmb_to_chk.getSelectedItem().toString()
+									+ "31")));
+					txt_sum_res
+							.setText(String.valueOf(gData.checkResultMN(cmb_type_res.getSelectedItem().toString(),
+									cmb_frm_chk.getSelectedItem().toString() + cmb_to_chk.getSelectedItem().toString()
+											+ "01",
+							cmb_frm_chk.getSelectedItem().toString() + cmb_to_chk.getSelectedItem().toString()
+									+ "31")));
+				} else {
 					txt_vol_res.setText(String.valueOf(gData.checkResultVOL(cmb_type_res.getSelectedItem().toString(),
-							cmb_frm_chk.getSelectedItem().toString()+cmb_to_chk.getSelectedItem().toString()+"01",
-							cmb_frm_chk.getSelectedItem().toString()+cmb_to_chk.getSelectedItem().toString()+"31")));
+							txt_frm_chk.getText().toString(), txt_to_chk.getText().toString())));
 					txt_sum_res.setText(String.valueOf(gData.checkResultMN(cmb_type_res.getSelectedItem().toString(),
-							cmb_frm_chk.getSelectedItem().toString()+cmb_to_chk.getSelectedItem().toString()+"01",
-							cmb_frm_chk.getSelectedItem().toString()+cmb_to_chk.getSelectedItem().toString()+"31")));
-				}
-				else {
-					txt_vol_res.setText(String.valueOf(gData.checkResultVOL(cmb_type_res.getSelectedItem().toString(),
-							txt_frm_chk.getText().toString(),
-							txt_to_chk.getText().toString())));
-					txt_sum_res.setText(String.valueOf(gData.checkResultMN(cmb_type_res.getSelectedItem().toString(),
-							txt_frm_chk.getText().toString(),
-							txt_to_chk.getText().toString())));
+							txt_frm_chk.getText().toString(), txt_to_chk.getText().toString())));
 				}
 			}
 		});
-	
+
 		brdr_lpgVol_gInfo.setText(String.valueOf(gData.getGasVolume("lpg")));
 		brdr_lpgPrc_gInfo.setText(String.valueOf(gData.getGasPrice("lpg")));
 		brdr_dslVol_gInfo.setText(String.valueOf(gData.getGasVolume("diesel")));
@@ -1166,6 +1184,64 @@ public class MainFrame extends JFrame {
 	private JTextFieldComponent txt_vol_res;
 	private JTextFieldComponent txt_sum_res;
 	private Calendar claendar;
+
+	class SaleThread extends Thread {
+
+		public void setState() {
+			String defaultText = " Enough Gas for all kinds";
+			String overMlgText = " Using Over Mileage";
+			String needOrderText = "Need to Order for";
+
+			/*
+			 * chk_mlg_sl btn_ok_sl txt_mlg_sl
+			 */
+
+		}
+
+		public void run() {
+
+			while (true) {
+
+				String kind = (String) cmb_type_sl.getSelectedItem();
+				int rPrice = Integer.parseInt(brdr_gslnPrc_gInfo.getText());
+				int pPrice = Integer.parseInt(brdr_lpgPrc_gInfo.getText());
+				int dPrice = Integer.parseInt(brdr_dslPrc_gInfo.getText());
+				int price;
+				if (kind.equals("diesel")) {
+					price = dPrice;
+				} else if (kind.equals("regular")) {
+					price = rPrice;
+				} else {
+					price = pPrice;
+				}
+				int money;
+				int vol = 0;
+				String tempText;
+				try {
+					if (rd_mn_sl.isSelected()) {
+						if (txt_mn_sl.getText() != null && !txt_mn_sl.getText().equals("")) {
+							money = Integer.parseInt(txt_mn_sl.getText());
+							tempText = String.valueOf((float) money / price);
+							txt_vol_sl.setText(tempText);
+						}
+
+					} else {
+						System.out.println("ddd");
+						if (txt_vol_sl.getText() != null && !txt_vol_sl.getText().equals("")) {
+							vol = Integer.parseInt(txt_vol_sl.getText());
+							tempText = String.valueOf((float) vol * price);
+							txt_mn_sl.setText(tempText);
+						}
+					}
+				} catch (java.lang.NumberFormatException e) {
+
+				} catch (java.lang.NullPointerException ex) {
+
+				}
+
+			}
+		}
+	}
 	// private DB_Observable db_obs;
 	// End of variables declaration//GEN-END:variables
 }
